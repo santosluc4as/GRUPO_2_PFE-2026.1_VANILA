@@ -1,0 +1,233 @@
+/* ======================================
+   SCRIPT.JS — Newsletter ACBrasil
+   Lógica de UI para a página de newsletter
+   ====================================== */
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  /* =========================
+     MENU MOBILE (HAMBÚRGUER)
+  ========================= */
+  const menuToggle = document.getElementById('menuToggle');
+  const mainNav = document.getElementById('mainNav');
+
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener('click', function () {
+      menuToggle.classList.toggle('active');
+      mainNav.classList.toggle('open');
+    });
+
+    // Fechar menu ao clicar em um link
+    const navLinks = mainNav.querySelectorAll('.header__nav-link');
+    navLinks.forEach(function (link) {
+      link.addEventListener('click', function () {
+        menuToggle.classList.remove('active');
+        mainNav.classList.remove('open');
+      });
+    });
+  }
+
+
+  /* =========================
+     FORMULÁRIO DE INSCRIÇÃO
+  ========================= */
+  const subscribeForm = document.getElementById('subscribeForm');
+  const emailInput = document.getElementById('emailInput');
+  const subscribeBtn = document.getElementById('subscribeBtn');
+
+  if (subscribeForm) {
+    subscribeForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const email = emailInput.value.trim();
+
+      if (!email) {
+        showToast('Por favor, insira um e-mail válido.', 'error');
+        return;
+      }
+
+      // Validação básica de e-mail
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        showToast('Formato de e-mail inválido.', 'error');
+        return;
+      }
+
+      // Simular envio
+      subscribeBtn.textContent = 'ENVIANDO...';
+      subscribeBtn.disabled = true;
+
+      setTimeout(function () {
+        showToast('Inscrição realizada com sucesso! 🎉', 'success');
+        emailInput.value = '';
+        subscribeBtn.textContent = 'INSCREVER-SE NA LISTA DE TRANSMISSÃO';
+        subscribeBtn.disabled = false;
+      }, 1500);
+    });
+  }
+
+
+  /* =========================
+     PAGINAÇÃO
+  ========================= */
+  const paginationBtns = document.querySelectorAll('.archive__page-btn');
+
+  paginationBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const page = btn.getAttribute('data-page');
+
+      if (page === 'next') {
+        // Encontrar a página ativa atual e avançar
+        const activeBtn = document.querySelector('.archive__page-btn--active');
+        if (activeBtn) {
+          const currentPage = parseInt(activeBtn.getAttribute('data-page'));
+          const nextBtn = document.querySelector('.archive__page-btn[data-page="' + (currentPage + 1) + '"]');
+          if (nextBtn) {
+            paginationBtns.forEach(function (b) { b.classList.remove('archive__page-btn--active'); });
+            nextBtn.classList.add('archive__page-btn--active');
+          }
+        }
+        return;
+      }
+
+      // Atualizar o botão ativo
+      paginationBtns.forEach(function (b) { b.classList.remove('archive__page-btn--active'); });
+      btn.classList.add('archive__page-btn--active');
+    });
+  });
+
+
+  /* =========================
+     BUSCA NO ARQUIVO
+  ========================= */
+  const searchInput = document.getElementById('searchInput');
+  const archiveGrid = document.getElementById('archiveGrid');
+
+  if (searchInput && archiveGrid) {
+    searchInput.addEventListener('input', function () {
+      const query = searchInput.value.toLowerCase().trim();
+      const cards = archiveGrid.querySelectorAll('.archive__card');
+
+      cards.forEach(function (card) {
+        const title = card.querySelector('.archive__card-title');
+        const edition = card.querySelector('.archive__edition');
+        const date = card.querySelector('.archive__date');
+
+        const text = (
+          (title ? title.textContent : '') + ' ' +
+          (edition ? edition.textContent : '') + ' ' +
+          (date ? date.textContent : '')
+        ).toLowerCase();
+
+        if (text.includes(query) || query === '') {
+          card.style.display = '';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(10px)';
+          setTimeout(function () {
+            if (!text.includes(searchInput.value.toLowerCase().trim())) {
+              card.style.display = 'none';
+            }
+          }, 300);
+        }
+      });
+    });
+  }
+
+
+  /* =========================
+     TOAST / NOTIFICAÇÃO
+  ========================= */
+  function showToast(message, type) {
+    // Remover toast existente
+    const existing = document.querySelector('.toast');
+    if (existing) existing.remove();
+
+    var toast = document.createElement('div');
+    toast.className = 'toast toast--' + type;
+    toast.textContent = message;
+
+    // Estilos inline do toast
+    toast.style.position = 'fixed';
+    toast.style.bottom = '30px';
+    toast.style.right = '30px';
+    toast.style.padding = '16px 28px';
+    toast.style.borderRadius = '8px';
+    toast.style.fontSize = '0.9rem';
+    toast.style.fontWeight = '600';
+    toast.style.color = '#ffffff';
+    toast.style.zIndex = '9999';
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateY(20px)';
+    toast.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+    toast.style.boxShadow = '0 8px 24px rgba(0,0,0,0.2)';
+
+    if (type === 'success') {
+      toast.style.backgroundColor = '#16a34a';
+    } else if (type === 'error') {
+      toast.style.backgroundColor = '#dc2626';
+    } else {
+      toast.style.backgroundColor = '#1e293b';
+    }
+
+    document.body.appendChild(toast);
+
+    // Animar entrada
+    requestAnimationFrame(function () {
+      toast.style.opacity = '1';
+      toast.style.transform = 'translateY(0)';
+    });
+
+    // Remover após 4 segundos
+    setTimeout(function () {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateY(20px)';
+      setTimeout(function () {
+        toast.remove();
+      }, 400);
+    }, 4000);
+  }
+
+
+  /* =========================
+     SCROLL ANIMAÇÃO (Fade-In)
+  ========================= */
+  var observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -40px 0px'
+  };
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fade-in--visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Adicionar fade-in aos cards do arquivo e cards curados
+  var animatedElements = document.querySelectorAll('.archive__card, .curated__card, .curated__feature');
+  animatedElements.forEach(function (el) {
+    el.classList.add('fade-in');
+    observer.observe(el);
+  });
+
+  // Adicionar CSS para fade-in via JS
+  var style = document.createElement('style');
+  style.textContent = [
+    '.fade-in {',
+    '  opacity: 0;',
+    '  transform: translateY(20px);',
+    '  transition: opacity 0.6s ease, transform 0.6s ease;',
+    '}',
+    '.fade-in--visible {',
+    '  opacity: 1;',
+    '  transform: translateY(0);',
+    '}'
+  ].join('\n');
+  document.head.appendChild(style);
+
+});
