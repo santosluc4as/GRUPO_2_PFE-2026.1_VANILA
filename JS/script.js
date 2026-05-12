@@ -15,7 +15,7 @@ async function fetchEconomicIndicators() {
     try {
         // Fetch HG Brasil Data (Ibovespa, Dolar, Euro)
         // Using json-cors to bypass CORS on the free tier if accessed from browser directly
-        const hgResponse = await fetch('https://api.hgbrasil.com/finance?format=json-cors');
+        const hgResponse = await fetch('https://api.hgbrasil.com/finance?format=json-cors&key=a9410b9f');
         const hgData = await hgResponse.json();
         
         // Fetch Banco Central Data (Selic, CDI, IPCA)
