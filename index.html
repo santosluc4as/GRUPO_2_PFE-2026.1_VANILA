@@ -5,38 +5,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ACBrasil - Governança que transforma empresas</title>
-    <!-- fontes do google: inter -->
+    
+    <!-- fontes do google: inter e montserrat/newsreader (padronização) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <!-- ícones do font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- CSS padrão e específico -->
+    <link rel="stylesheet" href="CSS/global.css">
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header class="header">
-        <div class="container header-content">
-            <div class="logo">
-                <!-- COLOQUE A IMAGEM DO LOGO AQUI -->
-                <img src="images/logo.png" alt="ACBrasil Logo Header" class="logo-img">
+    <!-- ===== BARRA DE PROGRESSO DE SCROLL ===== -->
+    <div class="barra-progresso-scroll" id="barraProgressoScroll"></div>
+
+    <!-- ===== BARRA DE BUSCA GLOBAL ===== -->
+    <div class="busca-overlay" id="buscaOverlay" role="dialog" aria-label="Busca no site" aria-hidden="true">
+        <div class="busca-container">
+            <div class="busca-cabecalho">
+                <span class="busca-titulo">O que você procura?</span>
+                <button class="busca-fechar" id="buscaFechar" aria-label="Fechar busca">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
             </div>
-            <nav class="nav-links">
-                <a href="index.html" class="active">Início</a>
-                <a href="HTML/sobre.html">Sobre nós</a>
-                <a href="HTML/insights.html">Insights</a>
-                <a href="HTML/newsletter.html">Notícias</a>
-                <a href="HTML/contato.html">Contato</a>
-                <button class="search-btn"><i class="fas fa-search"></i></button>
-            </nav>
-            <a href="HTML/associe-se.html" class="btn btn-primary">Seja um Associado</a>
+            <div class="busca-campo-wrapper">
+                <i class="fa-solid fa-magnifying-glass busca-icone"></i>
+                <input type="text" id="buscaInput" class="busca-campo" placeholder="Buscar páginas, conteúdos, associados..."
+                    autocomplete="off" />
+            </div>
+            <div class="busca-resultados" id="buscaResultados">
+                <p class="busca-dica">Digite para buscar páginas e conteúdos do site.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== NAVBAR ===== -->
+    <header class="cabecalho" id="cabecalho">
+        <nav class="navegacao" role="navigation" aria-label="Menu principal">
+
+            <!-- Logo -->
+            <a href="index.html" class="logo" aria-label="ACB - Página inicial">
+                <img src="images/logo.png" alt="ACB - Associação de Conselheiros do Brasil" class="logo-imagem">
+            </a>
+
+            <!-- Links de navegação (desktop) -->
+            <ul class="menu-lista" role="list">
+                <li class="menu-item"><a href="index.html" class="menu-link menu-link--ativo">Início</a></li>
+                <li class="menu-item"><a href="HTML/sobre.html" class="menu-link">Sobre nós</a></li>
+                <li class="menu-item"><a href="HTML/insights.html" class="menu-link">Insights</a></li>
+                <li class="menu-item"><a href="HTML/newsletter.html" class="menu-link">Notícias</a></li>
+                <li class="menu-item"><a href="HTML/contato.html" class="menu-link">Contato</a></li>
+            </ul>
+
+            <!-- Ações da navbar -->
+            <div class="navbar-acoes">
+                <button class="btn-busca" id="btnBusca" aria-label="Abrir busca">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <a href="HTML/associe-se.html" class="btn-area-associados">Área de Associados</a>
+                <button class="btn-menu-mobile" id="btnMenuMobile" aria-label="Abrir menu" aria-expanded="false">
+                    <span class="hamburguer-linha"></span>
+                    <span class="hamburguer-linha"></span>
+                    <span class="hamburguer-linha"></span>
+                </button>
+            </div>
+
+        </nav>
+
+        <!-- Menu Mobile -->
+        <div class="menu-mobile" id="menuMobile" aria-hidden="true">
+            <ul class="menu-mobile-lista" role="list">
+                <li><a href="index.html" class="menu-mobile-link">Início</a></li>
+                <li><a href="HTML/sobre.html" class="menu-mobile-link">Sobre nós</a></li>
+                <li><a href="HTML/insights.html" class="menu-mobile-link">Insights</a></li>
+                <li><a href="HTML/newsletter.html" class="menu-mobile-link">Notícias</a></li>
+                <li><a href="HTML/contato.html" class="menu-mobile-link">Contato</a></li>
+                <li><a href="HTML/associe-se.html" class="menu-mobile-link menu-mobile-link--destaque">Área de Associados</a></li>
+            </ul>
         </div>
     </header>
 
     <!-- Seção Principal (Hero) -->
-    <section class="hero">
+    <section class="hero-home">
         <div class="container hero-container">
             <div class="hero-content">
                 <span class="hero-tag">Conselho de Excelência</span>
@@ -44,15 +99,13 @@
                 <p>O maior portal de governança corporativa do país. Conteúdo, eventos e networking para profissionais
                     que buscam impacto no conselho de administração.</p>
                 <div class="hero-buttons">
-                    <a href="#" class="btn btn-secondary">Veja as novidades <i class="fas fa-arrow-right"></i></a>
+                    <a href="HTML/newsletter.html" class="btn btn-secondary">Veja as novidades <i class="fas fa-arrow-right"></i></a>
                     <a href="#" class="btn btn-outline">Eventos</a>
                 </div>
             </div>
             <div class="hero-image-wrapper">
-                <!-- COLOQUE A IMAGEM PRINCIPAL AQUI (Ex: alguém segurando um tablet) -->
                 <div class="hero-image-placeholder">
-                    <img src="images/hero.png" alt="Governança Corporativa" class="placeholder-img"
-                        data-placeholder="Imagem Hero (Tablet/Redes)">
+                    <img src="images/hero.png" alt="Governança Corporativa" class="placeholder-img">
                 </div>
                 <div class="hero-quote">
                     <p>"A inovação começa na mesa do conselho, guiando a empresa para o futuro."</p>
@@ -89,7 +142,8 @@
         <div class="container">
             <div class="section-header">
                 <h2>Artigos mais recentes</h2>
-                <a href="HTML/newsletter.html" class="view-all">Ver todo o acervo <i class="fas fa-arrow-right"></i></a>
+                <a href="https://acbrasil.org.br/cms/c/noticias/" class="view-all" target="_blank">Ver todo o acervo <i
+                        class="fas fa-arrow-right"></i></a>
             </div>
             <p class="section-subtitle">Acompanhe as últimas tendências e análises em governança.</p>
 
@@ -192,9 +246,6 @@
 
     <!-- seção final chamando pra participar -->
     <section class="cta-section">
-        <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
-        <!-- aqui vai a imagem de fundo (tipo uma sala de reunião escura) -->
-        <!-- a imagem mesmo é trocada lá no style.css, procura por .cta-section -->
         <div class="cta-overlay"></div>
         <div class="container cta-content">
             <h2>Seu lugar na mesa principal da <span class="highlight">ACBrasil</span></h2>
@@ -205,61 +256,111 @@
     </section>
 
     <!-- rodapé da página -->
-    <footer class="footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <div class="logo">
-                    <!-- logo que vai no rodapé -->
-                    <img src="images/logo.png" alt="ACBrasil Logo footer" class="logo-img">
-                </div>
-                <p>Governança que transforma empresas.<br>Conselheiros que transformam o Brasil.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+    <footer class="rodape">
+
+        <div class="rodape-principal">
+
+            <!-- Coluna de identidade -->
+            <div class="rodape-identidade">
+                <a href="index.html" class="logo logo--rodape" aria-label="ACB - Página inicial">
+                    <img src="images/logo-acb-fundo-transparente.png" alt="ACB - Associação de Conselheiros do Brasil"
+                        class="logo-imagem logo-imagem--rodape" />
+                </a>
+                <p class="rodape-descricao">
+                    Governança que transforma empresas.<br>Conselheiros que transformam o Brasil.
+                </p>
+                <div class="rodape-redes-sociais">
+                    <a href="#" class="rede-social-link" aria-label="Compartilhar">
+                        <i class="fa-solid fa-share-nodes"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/associacao-de-conselheiros-do-brasil/" class="rede-social-link"
+                        aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@acbrasil" class="rede-social-link" aria-label="YouTube" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a href="https://www.instagram.com/acbrasil.oficial/" class="rede-social-link" aria-label="Instagram"
+                        target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="rede-social-link" aria-label="WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
                 </div>
             </div>
 
-            <div class="footer-links-group">
-                <div class="footer-links">
-                    <h4>Navegação</h4>
-                    <ul>
-                        <li><a href="HTML/newsletter.html">Notícias</a></li>
-                        <li><a href="HTML/contato.html">Contato</a></li>
-                        <li><a href="HTML/insights.html">Insights</a></li>
-                        <li><a href="HTML/sobre.html">Sobre nós</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Associados</h4>
-                    <ul>
-                        <li><a href="HTML/associe-se.html">Torne-se Membro</a></li>
-                        <li><a href="HTML/login.html">Portal Privado</a></li>
-                        <li><a href="HTML/associe-se.html">Benefícios</a></li>
-                    </ul>
-                </div>
+            <!-- Coluna de navegação -->
+            <div class="rodape-coluna">
+                <h2 class="rodape-titulo-coluna">Navegação</h2>
+                <ul class="rodape-lista">
+                    <li><a href="HTML/newsletter.html" class="rodape-link">Notícias</a></li>
+                    <li><a href="HTML/contato.html" class="rodape-link">Contato</a></li>
+                    <li><a href="HTML/insights.html" class="rodape-link">Insights</a></li>
+                    <li><a href="HTML/sobre.html" class="rodape-link">Sobre nós</a></li>
+                    <li><a href="HTML/faq.html" class="rodape-link">FAQ</a></li>
+                </ul>
             </div>
 
-            <div class="footer-contact">
-                <h4>Suporte Institucional</h4>
-                <p><i class="fas fa-envelope"></i> contato@acbrasil.org.br</p>
-                <p><i class="fas fa-phone"></i> +55 (11) 9999-9999</p>
-                <p><i class="fas fa-map-marker-alt"></i> Av. Paulista, 1000 - São Paulo, SP</p>
+            <!-- Coluna de associados -->
+            <div class="rodape-coluna">
+                <h2 class="rodape-titulo-coluna">Associados</h2>
+                <ul class="rodape-lista">
+                    <li><a href="HTML/associe-se.html" class="rodape-link">Torne-se Membro</a></li>
+                    <li><a href="#" class="rodape-link">Portal Privativo</a></li>
+                    <li><a href="#" class="rodape-link">Benefícios</a></li>
+                </ul>
+            </div>
+
+            <!-- Coluna de suporte -->
+            <div class="rodape-coluna">
+                <h2 class="rodape-titulo-coluna">Suporte Institucional</h2>
+                <ul class="rodape-lista rodape-lista--contato">
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:contato@acbrasil.org" class="rodape-link">contato@acbrasil.org</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:+5521100000000" class="rodape-link">+55 (21) 1000-0000</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span class="rodape-texto">Av. das Américas, 1000 - RJ</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Rodapé inferior -->
+        <div class="rodape-inferior">
+            <p class="rodape-direitos">© 2026 Associação de Conselheiros do Brasil. Todos os direitos reservados.</p>
+            <div class="rodape-politicas">
+                <a href="#" class="rodape-politica-link">Política de Cookies</a>
+                <a href="#" class="rodape-politica-link">Política de Privacidade</a>
             </div>
         </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2024 ACBrasil. Todos os direitos reservados.</p>
-                <div class="footer-legal">
-                    <a href="#">POLÍTICA DE COOKIES</a>
-                    <a href="#">POLÍTICA DE PRIVACIDADE</a>
-                </div>
-            </div>
-        </div>
+
     </footer>
 
+    <!-- ===== TOAST DE NOTIFICAÇÃO ===== -->
+    <div class="toast" id="toast" role="alert" aria-live="assertive" aria-hidden="true">
+        <i class="toast-icone fa-solid fa-circle-check"></i>
+        <span class="toast-mensagem"></span>
+    </div>
+
+    <!-- VLibras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script src="JS/global.js"></script>
     <script src="JS/script.js"></script>
 </body>
 
