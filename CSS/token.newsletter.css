@@ -1,0 +1,84 @@
+/* 
+  Tokens de Design — Site ACBrasil
+  Baseado no global.css (Design Tokens padronizados)
+*/
+
+/* =========================
+   CORES
+========================= */
+
+:root {
+  /* Cores principais */
+  --cor-azul-escuro:    #1a2856;
+  --cor-azul-medio:     #1e3375;
+  --cor-dourado:        #c8972a;
+  --cor-dourado-claro:  #e6b23a;
+  --cor-dourado-hover:  #f0c84a;
+  --cor-branco:         #ffffff;
+  --cor-cinza-claro:    #f5f6fa;
+  --cor-cinza-medio:    #e8eaf0;
+  --cor-cinza-texto:    #6b7280;
+  --cor-texto-escuro:   #1a2333;
+  --cor-borda:          #dce0ec;
+  --cor-erro:           #dc2626;
+  --cor-sucesso:        #16a34a;
+}
+
+
+/* =========================
+   TIPOGRAFIA
+========================= */
+
+:root {
+  --fonte-titulo:       'Newsreader', Georgia, serif;
+  --fonte-texto:        'Montserrat', sans-serif;
+
+  /* Tamanhos de fonte */
+  --texto-xs:    0.75rem;
+  --texto-sm:    0.875rem;
+  --texto-base:  1rem;
+  --texto-md:    1.125rem;
+  --texto-lg:    1.25rem;
+  --texto-xl:    1.5rem;
+  --texto-2xl:   2rem;
+  --texto-3xl:   2.5rem;
+  --texto-4xl:   3.25rem;
+}
+
+
+/* =========================
+   ESPAÇAMENTO
+========================= */
+
+:root {
+  --espaco-xs:   0.25rem;
+  --espaco-sm:   0.5rem;
+  --espaco-md:   1rem;
+  --espaco-lg:   1.5rem;
+  --espaco-xl:   2rem;
+  --espaco-2xl:  3rem;
+  --espaco-3xl:  4rem;
+  --espaco-4xl:  6rem;
+}
+
+
+/* =========================
+   BORDAS E SOMBRAS
+========================= */
+
+:root {
+  /* Bordas */
+  --raio-sm:     4px;
+  --raio-md:     8px;
+  --raio-lg:     12px;
+  --raio-xl:     20px;
+  --raio-full:   9999px;
+
+  /* Sombras */
+  --sombra-sm:   0 1px 3px rgba(26,40,86,0.08), 0 1px 2px rgba(26,40,86,0.04);
+  --sombra-md:   0 4px 16px rgba(26,40,86,0.10), 0 2px 4px rgba(26,40,86,0.06);
+  --sombra-lg:   0 10px 40px rgba(26,40,86,0.14), 0 4px 12px rgba(26,40,86,0.08);
+  --sombra-xl:   0 20px 60px rgba(26,40,86,0.18), 0 8px 20px rgba(26,40,86,0.10);
+}
+
+
