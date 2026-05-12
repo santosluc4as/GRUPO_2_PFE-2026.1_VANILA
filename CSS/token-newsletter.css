@@ -1,5 +1,4 @@
-/* 
-  Tokens de Design — Site ACBrasil
+/* Tokens de Design — Site ACBrasil
   Baseado no global.css (Design Tokens padronizados)
 */
 
@@ -9,17 +8,23 @@
 
 :root {
   /* Cores principais */
-  --cor-azul-escuro:    #1a2856;
-  --cor-azul-medio:     #1e3375;
-  --cor-dourado:        #c8972a;
-  --cor-dourado-claro:  #e6b23a;
+  --cor-azul-escuro:    #141b3d; /* Azul profundo fiel ao print (background do footer) */
+  --cor-azul-medio:     #1e2954; /* Tom ligeiramente mais claro para interações */
+  --cor-dourado:        #dca838; /* Amarelo exato do card de destaque */
+  --cor-dourado-claro:  #eec054;
   --cor-dourado-hover:  #f0c84a;
+  
+  /* Neutros e Fundos */
   --cor-branco:         #ffffff;
-  --cor-cinza-claro:    #f5f6fa;
+  --cor-cinza-claro:    #f4f4f4; /* Cinza claro usado no fundo da Newsletter */
   --cor-cinza-medio:    #e8eaf0;
-  --cor-cinza-texto:    #6b7280;
-  --cor-texto-escuro:   #1a2333;
+  
+  /* Textos e Bordas */
+  --cor-texto-escuro:   #222222; /* Texto principal de leitura */
+  --cor-cinza-texto:    #666666; /* Texto secundário e legendas */
   --cor-borda:          #dce0ec;
+  
+  /* Feedback */
   --cor-erro:           #dc2626;
   --cor-sucesso:        #16a34a;
 }
@@ -63,6 +68,16 @@
 
 
 /* =========================
+   ESTRUTURA E LAYOUT
+========================= */
+
+:root {
+  --largura-maxima: 1140px; /* Largura padrão para alinhar com o Header/Footer */
+  --altura-navbar:  80px;   /* Altura do menu fixo */
+}
+
+
+/* =========================
    BORDAS E SOMBRAS
 ========================= */
 
@@ -75,10 +90,19 @@
   --raio-full:   9999px;
 
   /* Sombras */
-  --sombra-sm:   0 1px 3px rgba(26,40,86,0.08), 0 1px 2px rgba(26,40,86,0.04);
-  --sombra-md:   0 4px 16px rgba(26,40,86,0.10), 0 2px 4px rgba(26,40,86,0.06);
-  --sombra-lg:   0 10px 40px rgba(26,40,86,0.14), 0 4px 12px rgba(26,40,86,0.08);
-  --sombra-xl:   0 20px 60px rgba(26,40,86,0.18), 0 8px 20px rgba(26,40,86,0.10);
+  --sombra-sm:   0 1px 3px rgba(20,27,61,0.08), 0 1px 2px rgba(20,27,61,0.04);
+  --sombra-md:   0 4px 16px rgba(20,27,61,0.10), 0 2px 4px rgba(20,27,61,0.06);
+  --sombra-lg:   0 10px 40px rgba(20,27,61,0.14), 0 4px 12px rgba(20,27,61,0.08);
+  --sombra-xl:   0 20px 60px rgba(20,27,61,0.18), 0 8px 20px rgba(20,27,61,0.10);
 }
 
 
+/* =========================
+   TRANSIÇÕES
+========================= */
+
+:root {
+  --transicao-rapida: 0.2s ease-in-out;
+  --transicao-media:  0.3s ease-in-out;
+  --transicao-lenta:  0.5s ease-in-out;
+}
