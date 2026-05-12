@@ -6,20 +6,15 @@
   <meta name="description" content="Newsletter ACBrasil - Mantenha-se informado sobre as últimas tendências e novidades do mundo corporativo.">
   <title>Newsletter | ACBrasil</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- ============================
-       BARRA DE TOPO (TRANSMISSÃO)
-  ============================= -->
   <div class="top-bar">
     <a href="#newsletter-subscribe" class="top-bar__link">
       INSCREVER-SE NA LISTA DE TRANSMISSÃO
@@ -27,9 +22,6 @@
     </a>
   </div>
 
-  <!-- ============================
-       HEADER / NAVEGAÇÃO
-  ============================= -->
   <header class="header" id="header">
     <div class="header__container">
       <a href="../index.html" class="header__logo">
@@ -56,9 +48,6 @@
     </div>
   </header>
 
-  <!-- ============================
-       HERO
-  ============================= -->
   <section class="hero" id="hero">
     <div class="hero__container">
       <h1 class="hero__title">Notícias <span class="hero__title--highlight">ACBrasil</span></h1>
@@ -66,37 +55,28 @@
     </div>
   </section>
 
-  <!-- ============================
-       TÓPICOS CURADOS
-  ============================= -->
   <section class="curated" id="curated-topics">
     <div class="curated__container">
 
-      <!-- Linha 1: 3 cards -->
       <div class="curated__grid-top">
-        <!-- Card 1 -->
         <div class="curated__card">
           <span class="curated__tag">RELATÓRIO ESPECIAL</span>
           <h3 class="curated__card-title">Lorem ipsum dolor sit amet consectetur. Viverra nulla et vulputate.</h3>
           <a href="#" class="curated__card-link">LER INSIGHTS &rarr;</a>
         </div>
-        <!-- Card 2 -->
         <div class="curated__card">
           <span class="curated__tag">RELATÓRIO ESPECIAL</span>
           <h3 class="curated__card-title">Tortor turpis feugiat neque et. Rhoncus nisi tempor malesuada.</h3>
           <a href="#" class="curated__card-link">LER INSIGHTS &rarr;</a>
         </div>
-        <!-- Card destaque amarelo -->
         <div class="curated__card curated__card--highlight">
           <h3 class="curated__card-title curated__card-title--dark">Lorem ipsum dolor sit / Vel elementum</h3>
           <a href="#" class="curated__card-link curated__card-link--dark">LER INSIGHTS &rarr;</a>
         </div>
       </div>
 
-      <!-- Linha 2: Card largo com imagem -->
       <div class="curated__feature">
         <div class="curated__feature-image">
-          <!-- Placeholder para imagem de destaque -->
           <div class="curated__feature-placeholder"></div>
         </div>
         <div class="curated__feature-content">
@@ -112,9 +92,6 @@
     </div>
   </section>
 
-  <!-- ============================
-       ARQUIVO DE NOTÍCIAS
-  ============================= -->
   <section class="archive" id="archive">
     <div class="archive__container">
 
@@ -139,10 +116,8 @@
         </div>
       </div>
 
-      <!-- Grid de Cards do Arquivo -->
       <div class="archive__grid" id="archiveGrid">
 
-        <!-- Card 1 -->
         <article class="archive__card" data-edition="41">
           <div class="archive__card-info">
             <span class="archive__edition">ED. #41</span>
@@ -154,7 +129,6 @@
           </div>
         </article>
 
-        <!-- Card 2 -->
         <article class="archive__card" data-edition="40">
           <div class="archive__card-info">
             <span class="archive__edition">ED. #40</span>
@@ -166,7 +140,6 @@
           </div>
         </article>
 
-        <!-- Card 3 -->
         <article class="archive__card" data-edition="39">
           <div class="archive__card-info">
             <span class="archive__edition">ED. #39</span>
@@ -178,7 +151,6 @@
           </div>
         </article>
 
-        <!-- Card 4 -->
         <article class="archive__card" data-edition="38">
           <div class="archive__card-info">
             <span class="archive__edition">ED. #38</span>
@@ -190,7 +162,6 @@
           </div>
         </article>
 
-        <!-- Card 5 -->
         <article class="archive__card" data-edition="37">
           <div class="archive__card-info">
             <span class="archive__edition">ED. #37</span>
@@ -202,7 +173,6 @@
           </div>
         </article>
 
-        <!-- Card 6 -->
         <article class="archive__card" data-edition="36">
           <div class="archive__card-info">
             <span class="archive__edition">ED. #36</span>
@@ -218,24 +188,27 @@
     </div>
   </section>
 
-  <!-- ============================
-       INSCRIÇÃO NA NEWSLETTER
-  ============================= -->
   <section class="newsletter-subscribe" id="newsletter-subscribe">
-    <div class="newsletter-subscribe__overlay">
-      <div class="newsletter-subscribe__container">
-        <h2 class="newsletter-subscribe__title">Receba notícias da ACB em sua caixa de entrada</h2>
+    <div class="newsletter-subscribe__container">
+      <div class="newsletter-subscribe__content">
+        <h2 class="newsletter-subscribe__title">Receba notícias da ACB em sua<br>caixa de entrada.</h2>
+        <p class="newsletter-subscribe__subtitle">Lorem ipsum dolor sit amet consectetur. Sodales integer lorem viverra ultrices gravida est. Porttitor in eget suspendisse diam iaculis facilisis.</p>
+        
         <form class="newsletter-subscribe__form" id="subscribeForm">
-          <input type="email" class="newsletter-subscribe__input" id="emailInput" placeholder="Seu e-mail" required>
-          <button type="submit" class="newsletter-subscribe__btn" id="subscribeBtn">INSCREVER-SE NA LISTA DE TRANSMISSÃO</button>
+          <div class="newsletter-subscribe__field">
+            <label for="emailInput" class="newsletter-subscribe__label">ENDEREÇO DE E-MAIL</label>
+            <input type="email" class="newsletter-subscribe__input" id="emailInput" placeholder="nome@exemplo.com" required>
+          </div>
+          <button type="submit" class="newsletter-subscribe__btn" id="subscribeBtn">
+            INSCREVER-SE NA LISTA DE TRANSMISSÃO <span>&rarr;</span>
+          </button>
         </form>
+        
+        <p class="newsletter-subscribe__disclaimer">Ao se inscrever, você concorda com nossa Política de Privacidade e Acesso Institucional.</p>
       </div>
     </div>
   </section>
 
-  <!-- ============================
-       FOOTER
-  ============================= -->
   <footer class="footer" id="footer">
     <div class="footer__container">
 
@@ -303,7 +276,6 @@
     </div>
   </footer>
 
-  <!-- JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
