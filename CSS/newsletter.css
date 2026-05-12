@@ -251,7 +251,8 @@
   transition: all var(--transicao-media);
 }
 
-.archive__page-btn:hover, .archive__page-btn--active {
+.archive__page-btn:hover,
+.archive__page-btn--active {
   background-color: var(--cor-azul-escuro);
   color: var(--cor-branco);
 }
@@ -340,8 +341,12 @@
 }
 
 .archive__card-image {
+  width: 160px;
+  /* Um pouco maior para melhor visibilidade */
   position: relative;
-  padding-top: 56.25%;
+  flex-shrink: 0;
+  overflow: hidden;
+  background-color: var(--cor-cinza-claro);
 }
 
 .archive__card-placeholder {
@@ -379,7 +384,7 @@
 
 .newsletter-subscribe__subtitle {
   font-size: var(--texto-base);
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
   margin-bottom: 3rem;
 }
 
@@ -399,8 +404,8 @@
   height: 60px;
   padding: 0 2rem;
   border-radius: var(--raio-md);
-  border: 1px solid rgba(255,255,255,0.2);
-  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
   color: var(--cor-branco);
   font-size: var(--texto-base);
 }
@@ -429,22 +434,151 @@
 ========================= */
 
 @media (max-width: 992px) {
-  .curated__grid-top, .archive__grid {
+
+  .curated__grid-top,
+  .archive__grid {
     grid-template-columns: 1fr 1fr;
   }
+
   .curated__feature {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 768px) {
-  .curated__grid-top, .archive__grid {
+
+  .curated__grid-top,
+  .archive__grid {
     grid-template-columns: 1fr;
   }
+
   .newsletter-subscribe__form {
     flex-direction: column;
   }
-  .newsletter-subscribe__field, .newsletter-subscribe__btn {
+
+  .newsletter-subscribe__field,
+  .newsletter-subscribe__btn {
     width: 100%;
+  }
+}
+
+/* =========================
+   IMAGENS DA API
+========================= */
+.curated__feature-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transicao-media);
+}
+
+.curated__feature-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--raio-md);
+}
+
+.curated__feature-image:hover .curated__feature-img {
+  transform: scale(1.05);
+}
+
+.archive__card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--raio-sm);
+  transition: transform var(--transicao-media);
+}
+
+.archive__card:hover .archive__card-img {
+  transform: scale(1.05);
+}
+
+/* Link wrapper clicável no card */
+.archive__card-link-wrapper {
+  display: flex;
+  flex-direction: row;
+  /* Layout horizontal: Info | Imagem */
+  justify-content: space-between;
+  align-items: stretch;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  height: 100%;
+}
+
+.archive__card-link-wrapper:hover {
+  text-decoration: none;
+}
+
+.archive__card-info {
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.archive__card-image {
+  width: 160px;
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-left: 1px solid var(--cor-borda);
+  background-color: var(--cor-cinza-claro);
+}
+
+.archive__card-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transicao-media);
+}
+
+.archive__card:hover .archive__card-img {
+  transform: scale(1.1);
+}
+
+/* =========================
+   PAGINAÇÃO — ELLIPSIS
+========================= */
+.archive__page-ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: var(--cor-cinza-texto);
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.archive__page-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* =========================
+   LOADING SPINNER
+========================= */
+.archive__loading-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--cor-borda);
+  border-top-color: var(--cor-azul-escuro);
+  border-radius: 50%;
+  margin: 0 auto;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }

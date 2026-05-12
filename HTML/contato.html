@@ -9,35 +9,33 @@
     <!-- Fontes principais -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome para ícones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <link rel="stylesheet" href="../CSS/global.css">
-  <link rel="stylesheet" href="../CSS/tokens.css" />
   <link rel="stylesheet" href="../CSS/contato.css" />
   <script src="../JS/Contato.js" defer></script>
 </head>
-<body class="pagina-contato">
+<body>
   <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
 
   <header class="cabecalho" id="cabecalho">
     <nav class="navegacao" role="navigation" aria-label="Menu principal">
 
       <!-- Logo -->
-      <a href="#" class="logo" aria-label="ACB - Página inicial">
-        <img src="/images/logo-acb-fundo-transparente.png" alt="ACB - Associação de Conselheiros do Brasil" class="logo-imagem">
-
+      <a href="../index.html" class="logo" aria-label="ACB - Página inicial">
+        <img src="../images/logo.png" alt="ACB - Associação de Conselheiros do Brasil" class="logo-imagem">
       </a>
 
       <!-- Links de navegação (desktop) -->
       <ul class="menu-lista" role="list">
-        <li class="menu-item"><a href="index.html" class="menu-link">Início</a></li>
-        <li class="menu-item"><a href="#" class="menu-link">Sobre nós</a></li>
-        <li class="menu-item"><a href="#" class="menu-link">Insights</a></li>
-        <li class="menu-item"><a href="#" class="menu-link">Notícias</a></li>
-        <li class="menu-item"><a href="#" class="menu-link">Contato</a></li>
+        <li class="menu-item"><a href="../index.html" class="menu-link">Início</a></li>
+        <li class="menu-item"><a href="sobre.html" class="menu-link">Sobre nós</a></li>
+        <li class="menu-item"><a href="insights.html" class="menu-link">Insights</a></li>
+        <li class="menu-item"><a href="newsletter.html" class="menu-link">Notícias</a></li>
+        <li class="menu-item"><a href="contato.html" class="menu-link menu-link--ativo">Contato</a></li>
       </ul>
 
       <!-- Ações da navbar -->
@@ -45,7 +43,7 @@
         <button class="btn-busca" id="btnBusca" aria-label="Abrir busca">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
-        <a href="#" class="btn-area-associados">Área de Associados</a>
+        <a href="associe-se.html" class="btn-area-associados">Área de Associados</a>
         <button class="btn-menu-mobile" id="btnMenuMobile" aria-label="Abrir menu" aria-expanded="false">
           <span class="hamburguer-linha"></span>
           <span class="hamburguer-linha"></span>
@@ -58,12 +56,12 @@
     <!-- Menu Mobile -->
     <div class="menu-mobile" id="menuMobile" aria-hidden="true">
       <ul class="menu-mobile-lista" role="list">
-        <li><a href="#" class="menu-mobile-link">Início</a></li>
-        <li><a href="#" class="menu-mobile-link">Sobre nós</a></li>
-        <li><a href="#" class="menu-mobile-link">Insights</a></li>
-        <li><a href="#" class="menu-mobile-link">Notícias</a></li>
-        <li><a href="#" class="menu-mobile-link">Contato</a></li>
-        <li><a href="#" class="menu-mobile-link menu-mobile-link--destaque">Área de Associados</a></li>
+        <li><a href="../index.html" class="menu-mobile-link">Início</a></li>
+        <li><a href="sobre.html" class="menu-mobile-link">Sobre nós</a></li>
+        <li><a href="insights.html" class="menu-mobile-link">Insights</a></li>
+        <li><a href="newsletter.html" class="menu-mobile-link">Notícias</a></li>
+        <li><a href="contato.html" class="menu-mobile-link">Contato</a></li>
+        <li><a href="associe-se.html" class="menu-mobile-link menu-mobile-link--destaque">Área de Associados</a></li>
       </ul>
     </div>
   </header>

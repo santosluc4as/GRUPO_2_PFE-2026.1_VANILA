@@ -2,53 +2,8 @@
    CONTATO.CSS
    Versão desktop-first mais rígida, focada em fidelidade
    visual com a referência.
+   Usa os tokens definidos em global.css
 ========================================================= */
-
-/* =========================
-   RESET
-========================= */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body.pagina-contato {
-  margin: 0;
-  background: #f3f3f3;
-  color: #5a5f74;
-  font-family: var(--fonte-principal);
-  font-size: var(--tamanho-texto-base);
-  line-height: var(--altura-linha);
-  overflow-x: hidden;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button,
-input,
-select,
-textarea {
-  font: inherit;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
 
 /* =========================
    ACESSIBILIDADE
@@ -57,11 +12,11 @@ ul {
   position: absolute;
   top: -48px;
   left: 16px;
-  background: #000;
-  color: #fff;
+  background: var(--cor-texto-escuro);
+  color: var(--cor-branco);
   padding: 10px 16px;
   z-index: 9999;
-  border-radius: 4px;
+  border-radius: var(--raio-sm);
 }
 
 .skip-link:focus {
@@ -85,7 +40,7 @@ button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid var(--cor-destaque);
+  outline: 3px solid var(--cor-dourado);
   outline-offset: 2px;
 }
 
@@ -103,20 +58,20 @@ textarea:focus-visible {
 }
 
 /* =========================
-   HEADER
+   HEADER (legado contato — mantido por compatibilidade)
 ========================= */
 .cabecalho-contato {
   height: 64px;
   display: flex;
   align-items: stretch;
-  background: #ffffff;
-  border-bottom: 1px solid #dfdfdf;
+  background: var(--cor-branco);
+  border-bottom: 1px solid var(--cor-borda);
 }
 
 .cabecalho-contato__logo-faixa {
   width: 80px;
   min-width: 80px;
-  background: #241d82;
+  background: var(--cor-azul-escuro);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -149,14 +104,14 @@ textarea:focus-visible {
 }
 
 .cabecalho-contato__menu a {
-  font-size: 0.84rem;
+  font-size: var(--texto-sm);
   font-weight: 500;
-  color: #555b72;
+  color: var(--cor-cinza-texto);
 }
 
 .cabecalho-contato__menu a[aria-current="page"] {
-  color: #241d82;
-  border-bottom: 2px solid #241d82;
+  color: var(--cor-azul-escuro);
+  border-bottom: 2px solid var(--cor-azul-escuro);
   padding-bottom: 4px;
 }
 
@@ -171,24 +126,25 @@ textarea:focus-visible {
   background: transparent;
   padding: 0;
   cursor: pointer;
-  color: #555b72;
-  font-size: 0.92rem;
+  color: var(--cor-cinza-texto);
+  font-size: var(--texto-base);
   line-height: 1;
 }
 
 .cabecalho-contato__botao {
-  background: #2d268c;
-  color: #fff;
-  font-size: 0.82rem;
+  background: var(--cor-azul-escuro);
+  color: var(--cor-branco);
+  font-size: var(--texto-sm);
   font-weight: 600;
   padding: 11px 18px;
-  border-radius: 4px;
+  border-radius: var(--raio-sm);
   white-space: nowrap;
+  transition: background var(--transicao-media);
 }
 
 .cabecalho-contato__botao:hover {
   text-decoration: none;
-  filter: brightness(1.04);
+  background: var(--cor-dourado);
 }
 
 /* =========================
@@ -201,10 +157,10 @@ textarea:focus-visible {
 .hero-contato__box {
   position: relative;
   min-height: 248px;
-  background: #ffffff;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.08);
+  background: var(--cor-branco);
+  box-shadow: var(--sombra-sm);
   overflow: hidden;
-  border-bottom: 2px solid rgb(45 38 140 / 0.06);
+  border-bottom: 2px solid rgba(26, 40, 86, 0.06);
   margin-top: 6%;
 }
 
@@ -214,14 +170,14 @@ textarea:focus-visible {
   left: 0;
   width: 220px;
   height: 100%;
-  background: #f0c400;
+  background: var(--cor-dourado);
   z-index: 0;
 }
 
 .hero-contato__decoracao_base{
 position: absolute;
   min-height: 248px;
-  background: #ffffff;
+  background: var(--cor-branco);
   width: 100%;
   height: 100%;
   border-top-left-radius:250px;
@@ -238,25 +194,25 @@ position: absolute;
 
 .hero-contato__kicker {
   margin: 0 0 10px;
-  color: #b39233;
-  font-size: 0.76rem;
+  color: var(--cor-dourado);
+  font-size: var(--texto-xs);
   font-weight: 700;
   letter-spacing: 0.11em;
 }
 
 .hero-contato__titulo {
   margin: 0 0 14px;
-  font-family: var(--fonte-titulos);
+  font-family: var(--fonte-titulo);
   font-size: 3.55rem;
   line-height: 1;
-  color: #191673;
+  color: var(--cor-azul-escuro);
 }
 
 .hero-contato__descricao {
   max-width: 610px;
   margin: 0;
-  color: #858999;
-  font-size: 0.9rem;
+  color: var(--cor-cinza-texto);
+  font-size: var(--texto-sm);
   line-height: 1.7;
 }
 
@@ -291,16 +247,16 @@ position: absolute;
 
 .info-contato__titulo {
   margin: 0;
-  color: #a98d37;
-  font-size: 0.75rem;
+  color: var(--cor-dourado);
+  font-size: var(--texto-xs);
   font-weight: 700;
   letter-spacing: 0.08em;
 }
 
 .info-contato__texto {
   font-style: normal;
-  color: #4f536d;
-  font-size: 0.92rem;
+  color: var(--cor-cinza-texto);
+  font-size: var(--texto-sm);
   line-height: 1.6;
 }
 
@@ -309,13 +265,18 @@ position: absolute;
 }
 
 .info-contato__texto a {
-  color: #4f536d;
+  color: var(--cor-cinza-texto);
+  transition: color var(--transicao-rapida);
+}
+
+.info-contato__texto a:hover {
+  color: var(--cor-dourado);
 }
 
 .info-contato__icone {
   display: inline-block;
   width: 16px;
-  color: #261f86;
+  color: var(--cor-azul-escuro);
   margin-right: 6px;
 }
 
@@ -327,7 +288,7 @@ position: absolute;
   width: 100%;
   height: 190px;
   margin-top: 4px;
-  border-radius: 4px;
+  border-radius: var(--raio-sm);
   overflow: hidden;
   background:
     linear-gradient(rgb(0 0 0 / 0.08), rgb(0 0 0 / 0.08)),
@@ -350,9 +311,9 @@ position: absolute;
   left: 50%;
   width: 136px;
   transform: translate(-50%, -50%);
-  background: #f8f8f8;
-  border-left: 4px solid #e2bf27;
-  box-shadow: 0 8px 16px rgb(0 0 0 / 0.10);
+  background: var(--cor-cinza-claro);
+  border-left: 4px solid var(--cor-dourado);
+  box-shadow: var(--sombra-md);
   text-align: center;
   padding: 16px 10px;
   z-index: 1;
@@ -360,25 +321,26 @@ position: absolute;
 
 .mapa-contato__frase {
   margin: 0 0 10px;
-  font-family: var(--fonte-titulos);
-  font-size: 0.84rem;
+  font-family: var(--fonte-titulo);
+  font-size: var(--texto-sm);
   font-style: italic;
-  color: #403d89;
+  color: var(--cor-azul-medio);
 }
 
 .mapa-contato__botao {
   display: inline-block;
-  background: #2d268c;
-  color: #fff;
-  font-size: 0.68rem;
+  background: var(--cor-azul-escuro);
+  color: var(--cor-branco);
+  font-size: var(--texto-xs);
   font-weight: 600;
   line-height: 1.3;
   padding: 9px 9px;
+  transition: background var(--transicao-media);
 }
 
 .mapa-contato__botao:hover {
   text-decoration: none;
-  filter: brightness(1.04);
+  background: var(--cor-dourado);
 }
 
 /* =========================
@@ -386,10 +348,10 @@ position: absolute;
 ========================= */
 .formulario-contato-box {
   position: relative;
-  background: #ffffff;
+  background: var(--cor-branco);
   padding: 20px 24px 20px;
   min-height: 396px;
-  box-shadow: 0 1px 2px rgb(0 0 0 / 0.03);
+  box-shadow: var(--sombra-sm);
 }
 
 .formulario-contato-box::before {
@@ -397,7 +359,7 @@ position: absolute;
   position: absolute;
   inset: 0 auto 0 0;
   width: 4px;
-  background: #e2bf27;
+  background: var(--cor-dourado);
 }
 
 .formulario-contato {
@@ -413,8 +375,8 @@ position: absolute;
 }
 
 .formulario-contato__campo label {
-  color: #b7b7be;
-  font-size: 0.66rem;
+  color: var(--cor-cinza-texto);
+  font-size: var(--texto-xs);
   font-weight: 700;
   letter-spacing: 0.12em;
 }
@@ -424,11 +386,20 @@ position: absolute;
 .formulario-contato__campo textarea {
   width: 100%;
   border: none;
-  border-bottom: 1px solid #d6d6dc;
+  border-bottom: 1px solid var(--cor-borda);
   background: transparent;
-  color: #4d5070;
-  font-size: 0.92rem;
+  color: var(--cor-texto-escuro);
+  font-size: var(--texto-sm);
+  font-family: var(--fonte-texto);
   padding: 8px 8px 10px;
+  transition: border-color var(--transicao-media);
+}
+
+.formulario-contato__campo input:focus,
+.formulario-contato__campo select:focus,
+.formulario-contato__campo textarea:focus {
+  border-color: var(--cor-azul-medio);
+  outline: none;
 }
 
 .formulario-contato__campo select {
@@ -443,40 +414,49 @@ position: absolute;
 
 .formulario-contato__campo input::placeholder,
 .formulario-contato__campo textarea::placeholder {
-  color: #bcbcc4;
+  color: var(--cor-cinza-texto);
+  opacity: 0.6;
 }
 
 .formulario-contato__enviar {
   margin-top: 2px;
   border: none;
-  background: #2d268c;
-  color: #fff;
-  font-size: 0.86rem;
+  background: var(--cor-azul-escuro);
+  color: var(--cor-branco);
+  font-size: var(--texto-sm);
   font-weight: 600;
+  font-family: var(--fonte-texto);
   padding: 13px 18px;
+  border-radius: var(--raio-sm);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   cursor: pointer;
+  transition: background var(--transicao-media),
+              transform var(--transicao-rapida),
+              box-shadow var(--transicao-media);
 }
 
 .formulario-contato__enviar:hover {
-  filter: brightness(1.04);
+  background: var(--cor-dourado);
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-md);
 }
 
 .formulario-contato__texto-legal {
   margin: 0;
-  color: #a8a8b0;
-  font-size: 0.54rem;
+  color: var(--cor-cinza-texto);
+  font-size: var(--texto-xs);
   line-height: 1.4;
   text-align: center;
+  opacity: 0.7;
 }
 
 .mensagem-erro {
   min-height: 1em;
   color: var(--cor-erro);
-  font-size: 0.74rem;
+  font-size: var(--texto-xs);
 }
 
 .mensagem-sucesso {
@@ -484,7 +464,7 @@ position: absolute;
   margin: 0;
   text-align: center;
   color: var(--cor-sucesso);
-  font-size: 0.78rem;
+  font-size: var(--texto-sm);
   font-weight: 600;
 }
 
@@ -492,7 +472,7 @@ position: absolute;
    APOIO IMEDIATO
 ========================= */
 .apoio-imediato {
-  background: #efefef;
+  background: var(--cor-cinza-claro);
   padding: 52px 0 58px;
 }
 
@@ -503,9 +483,9 @@ position: absolute;
 
 .apoio-imediato__titulo {
   margin: 0;
-  font-family: var(--fonte-titulos);
+  font-family: var(--fonte-titulo);
   font-size: 2.55rem;
-  color: #1a1677;
+  color: var(--cor-azul-escuro);
   line-height: 1.08;
 }
 
@@ -513,8 +493,9 @@ position: absolute;
   display: block;
   width: 54px;
   height: 4px;
-  background: #e2bf27;
+  background: var(--cor-dourado);
   margin: 12px auto 0;
+  border-radius: var(--raio-full);
 }
 
 .apoio-imediato__cards {
@@ -526,45 +507,57 @@ position: absolute;
 }
 
 .card-apoio {
-  background: #ffffff;
+  background: var(--cor-branco);
   min-height: 148px;
   padding: 18px 18px 16px;
-  box-shadow: 0 1px 2px rgb(0 0 0 / 0.03);
+  box-shadow: var(--sombra-sm);
+  border-radius: var(--raio-md);
+  transition: transform var(--transicao-media), box-shadow var(--transicao-media);
+}
+
+.card-apoio:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-md);
 }
 
 .card-apoio__icone {
-  color: #aa8d35;
-  font-size: 0.95rem;
+  color: var(--cor-dourado);
+  font-size: var(--texto-base);
   margin-bottom: 10px;
 }
 
 .card-apoio__titulo {
   margin: 0 0 8px;
-  font-family: var(--fonte-titulos);
+  font-family: var(--fonte-titulo);
   font-size: 1.38rem;
   line-height: 1.1;
-  color: #1a1677;
+  color: var(--cor-azul-escuro);
 }
 
 .card-apoio__texto {
   margin: 0 0 14px;
-  color: #696d7d;
-  font-size: 0.82rem;
+  color: var(--cor-cinza-texto);
+  font-size: var(--texto-sm);
   line-height: 1.45;
 }
 
 .card-apoio__link {
-  color: #1a1677;
-  font-size: 0.78rem;
+  color: var(--cor-azul-escuro);
+  font-size: var(--texto-xs);
   font-weight: 700;
+  transition: color var(--transicao-rapida);
+}
+
+.card-apoio__link:hover {
+  color: var(--cor-dourado);
 }
 
 /* =========================
    FOOTER
 ========================= */
 .rodape-contato {
-  background: #261f86;
-  color: #ffffff;
+  background: var(--cor-azul-escuro);
+  color: var(--cor-branco);
 }
 
 .rodape-contato__container {
@@ -583,8 +576,8 @@ position: absolute;
 .rodape-contato__descricao {
   max-width: 190px;
   margin: 0 0 16px;
-  color: rgb(255 255 255 / 0.82);
-  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--texto-sm);
   line-height: 1.45;
 }
 
@@ -597,21 +590,32 @@ position: absolute;
 .rodape-contato__redes a {
   width: 28px;
   height: 28px;
-  background: #fff;
-  color: #261f86;
-  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: var(--raio-sm);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 0.82rem;
+  font-size: var(--texto-sm);
+  transition: background var(--transicao-media),
+              color var(--transicao-rapida),
+              transform var(--transicao-media);
+}
+
+.rodape-contato__redes a:hover {
+  background: var(--cor-dourado);
+  color: var(--cor-branco);
+  transform: translateY(-3px);
 }
 
 .rodape-contato__coluna h2 {
   margin: 0 0 12px;
-  font-size: 0.74rem;
+  font-size: var(--texto-xs);
+  font-weight: 700;
   letter-spacing: 0.08em;
-  color: rgb(255 255 255 / 0.92);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .rodape-contato__coluna ul li,
@@ -621,20 +625,25 @@ position: absolute;
 
 .rodape-contato__coluna a,
 .rodape-contato__coluna address {
-  color: rgb(255 255 255 / 0.84);
+  color: rgba(255, 255, 255, 0.6);
   font-style: normal;
-  font-size: 0.82rem;
+  font-size: var(--texto-sm);
+  transition: color var(--transicao-rapida);
+}
+
+.rodape-contato__coluna a:hover {
+  color: var(--cor-dourado-claro);
 }
 
 .rodape-contato__base {
-  border-top: 1px solid rgb(255 255 255 / 0.10);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding: 10px 20px 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  color: rgb(255 255 255 / 0.72);
-  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: var(--texto-xs);
 }
 
 .rodape-contato__base p {
@@ -644,6 +653,14 @@ position: absolute;
 .rodape-contato__links {
   display: flex;
   gap: 22px;
+}
+
+.rodape-contato__links a {
+  transition: color var(--transicao-rapida);
+}
+
+.rodape-contato__links a:hover {
+  color: var(--cor-dourado-claro);
 }
 
 /* =========================
