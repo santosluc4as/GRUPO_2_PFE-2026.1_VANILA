@@ -676,7 +676,7 @@ h4 {
 /* ==========================================================================
    Responsividade
    ========================================================================== */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
@@ -707,12 +707,6 @@ h4 {
         grid-template-columns: 1fr;
     }
 
-    .article-card.small .article-image {
-        width: 30%;
-    }
-}
-
-@media (max-width: 768px) {
     .hero-home {
         padding: 8rem 0 6rem;
     }

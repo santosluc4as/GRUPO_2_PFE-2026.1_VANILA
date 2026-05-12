@@ -433,22 +433,14 @@
    RESPONSIVE
 ========================= */
 
-@media (max-width: 992px) {
-
-  .curated__grid-top,
-  .archive__grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .curated__feature {
-    grid-template-columns: 1fr;
-  }
-}
-
 @media (max-width: 768px) {
 
   .curated__grid-top,
   .archive__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .curated__feature {
     grid-template-columns: 1fr;
   }
 

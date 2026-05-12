@@ -1,44 +1,55 @@
+/**
+ * script.js - Lógica principal do site ACBrasil
+ * Gerencia a busca de indicadores econômicos e artigos do WordPress com tratamento de erros.
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
+    // Inicializa a busca de dados assim que o DOM estiver carregado
     fetchEconomicIndicators();
     fetchArticles();
     
-    // Back to top smooth scroll
-    document.getElementById('backToTop').addEventListener('click', (e) => {
+    // Configura o botão de "Voltar ao Topo" para realizar uma rolagem suave até o início da página
+    // O uso do "?." evita erros caso o botão não exista na página atual
+    document.getElementById('backToTop')?.addEventListener('click', (e) => {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 });
 
+/**
+ * Busca indicadores econômicos das APIs HG Brasil e Banco Central (SGS)
+ */
 async function fetchEconomicIndicators() {
     const container = document.getElementById('indicators-container');
+    if (!container) return; // Sai silenciosamente se o container não estiver na página
     
     try {
-        // Fetch HG Brasil Data (Ibovespa, Dolar, Euro)
-        // Using json-cors to bypass CORS on the free tier if accessed from browser directly
+        // 1. Busca dados da HG Brasil (Ibovespa, Dólar, Euro)
         const hgResponse = await fetch('https://api.hgbrasil.com/finance?format=json-cors&key=a9410b9f');
         const hgData = await hgResponse.json();
         
-        // Fetch Banco Central Data (Selic, CDI, IPCA)
-        // Fetching last 2 periods to calculate variation
-        // Selic Meta
+        // 2. Busca dados do Banco Central (Selic, CDI, IPCA) via Sistema Gerenciador de Séries Temporais (SGS)
+        // Buscamos os últimos 2 registros para calcular a variação recente
+        
+        // Selic Meta (Série 432)
         const selicResponse = await fetch('https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados/ultimos/2?formato=json');
         const selicData = await selicResponse.json();
         const selicCurrent = parseFloat(selicData[1].valor);
         const selicVariation = selicCurrent - parseFloat(selicData[0].valor);
         
-        // CDI (Anualizada)
+        // CDI Anualizada (Série 4389)
         const cdiResponse = await fetch('https://api.bcb.gov.br/dados/serie/bcdata.sgs.4389/dados/ultimos/2?formato=json');
         const cdiData = await cdiResponse.json();
         const cdiCurrent = parseFloat(cdiData[1].valor);
         const cdiVariation = cdiCurrent - parseFloat(cdiData[0].valor);
         
-        // IPCA (Acumulado 12 meses)
+        // IPCA Acumulado 12 meses (Série 13522)
         const ipcaResponse = await fetch('https://api.bcb.gov.br/dados/serie/bcdata.sgs.13522/dados/ultimos/2?formato=json');
         const ipcaData = await ipcaResponse.json();
         const ipcaCurrent = parseFloat(ipcaData[1].valor);
         const ipcaVariation = ipcaCurrent - parseFloat(ipcaData[0].valor);
 
-        // Process HG Data
+        // Processa e organiza os dados para renderização
         const results = hgData.results;
         
         const indicators = [
@@ -82,8 +93,12 @@ async function fetchEconomicIndicators() {
     }
 }
 
+/**
+ * Renderiza os cards de indicadores na tela
+ */
 function renderIndicators(container, indicators) {
-    container.innerHTML = ''; // Clear skeletons
+    if (!container) return;
+    container.innerHTML = ''; // Limpa os skeletons de carregamento
 
     indicators.forEach(ind => {
         const card = document.createElement('div');
@@ -101,7 +116,6 @@ function renderIndicators(container, indicators) {
                                 ${icon} ${sign}${ind.variation.toFixed(2).replace('.', ',')}%
                              </div>`;
         } else {
-            // For rates that don't have a daily variation available
             variationHtml = `<div class="indicator-variation" style="color: #999;">--</div>`;
         }
 
@@ -111,10 +125,10 @@ function renderIndicators(container, indicators) {
             ${variationHtml}
         `;
         
-        
         container.appendChild(card);
     });
 
+    // Atualiza o texto de "última atualização"
     const updateText = document.getElementById('update-rate-text');
     if (updateText) {
         const now = new Date();
@@ -123,6 +137,9 @@ function renderIndicators(container, indicators) {
     }
 }
 
+/**
+ * Funções auxiliares de formatação
+ */
 function formatNumber(num) {
     return new Intl.NumberFormat('pt-BR').format(num);
 }
@@ -141,8 +158,12 @@ function formatPercent(num) {
 
 const WP_API_BASE = 'https://acbrasil.org.br/cms/wp-json/wp/v2';
 
+/**
+ * Busca os últimos 3 posts do WordPress da ACBrasil
+ */
 async function fetchArticles() {
     const container = document.getElementById('articles-container');
+    if (!container) return; // Proteção: evita erro se o elemento não existir na página
     
     try {
         const response = await fetch(`${WP_API_BASE}/posts?per_page=3&_embed`);
@@ -161,7 +182,11 @@ async function fetchArticles() {
     }
 }
 
+/**
+ * Renderiza os artigos no grid
+ */
 function renderArticles(container, posts) {
+    if (!container) return;
     container.innerHTML = '';
 
     const featuredPost = posts[0];
@@ -223,22 +248,21 @@ function renderArticles(container, posts) {
     }
 }
 
-// --- Helpers para WordPress ---
+/**
+ * Helpers para a WP-API
+ */
 
 function getFeaturedImage(post, size) {
     try {
         const media = post._embedded['wp:featuredmedia'];
         if (media && media[0]) {
-            // Tenta pegar o tamanho desejado primeiro
             const sizes = media[0].media_details?.sizes;
             if (sizes && sizes[size]) {
                 return sizes[size].source_url;
             }
-            // Fallback para source_url geral
             return media[0].source_url;
         }
-    } catch (e) { /* ignora */ }
-    // Fallback placeholder
+    } catch (e) { }
     return 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e2e8f0%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%2364748b%22 font-family=%22sans-serif%22 font-size=%2216%22%3ESem imagem%3C/text%3E%3C/svg%3E';
 }
 
@@ -248,7 +272,7 @@ function getCategory(post) {
         if (terms && terms[0] && terms[0].length > 0) {
             return terms[0][0].name;
         }
-    } catch (e) { /* ignora */ }
+    } catch (e) { }
     return 'Artigo';
 }
 
@@ -261,7 +285,7 @@ function getAuthorName(post) {
         if (author && author[0]) {
             return author[0].name;
         }
-    } catch (e) { /* ignora */ }
+    } catch (e) { }
     return 'ACBrasil';
 }
 
@@ -271,22 +295,25 @@ function getAuthorAvatar(post) {
         if (author && author[0]?.avatar_urls) {
             return author[0].avatar_urls['96'] || author[0].avatar_urls['48'];
         }
-    } catch (e) { /* ignora */ }
+    } catch (e) { }
     return 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22%3E%3Ccircle cx=%2220%22 cy=%2220%22 r=%2220%22 fill=%22%23e2e8f0%22/%3E%3C/svg%3E';
 }
 
+// Remove tags HTML de strings (ex: excerpts)
 function stripHtml(html) {
     const tmp = document.createElement('div');
     tmp.innerHTML = html;
     return tmp.textContent || tmp.innerText || '';
 }
 
+// Decodifica entidades HTML em texto comum (ex: &nbsp;, &aacute;)
 function decodeHtml(html) {
     const tmp = document.createElement('textarea');
     tmp.innerHTML = html;
     return tmp.value;
 }
 
+// Formata data do WordPress para o padrão brasileiro
 function formatDatePtBR(dateString) {
     const date = new Date(dateString);
     const months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
