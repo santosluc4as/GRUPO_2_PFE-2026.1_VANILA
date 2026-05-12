@@ -35,6 +35,18 @@
   box-shadow: var(--sombra-lg);
 }
 
+/* Decorações geométricas de fundo */
+/*
+.hero-decoracao-linha {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 60%;
+  background: linear-gradient(180deg, var(--cor-dourado), transparent);
+  pointer-events: none;
+  animation: aparecer 1s ease 0.5s both;
+}
 */
 .hero-grade {
   max-width: 1280px;
