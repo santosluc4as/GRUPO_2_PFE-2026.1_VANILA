@@ -206,8 +206,8 @@
 
         <div class="apoio-imediato__cards">
           <article class="card-apoio">
-            <div class="card-apoio__icone" aria-hidden="true">◔</div>
-            <h3 class="card-apoio__titulo">WhatsApp</h3>
+            <div class="card-apoio__icone" aria-hidden="true"><i class="fa-brands fa-whatsapp"></i></div>
+            <h3 class="card-apoio__titulo">WhatsApp</h3>  
             <p class="card-apoio__texto">
               Atendimento ágil para associados e dúvidas rápidas sobre eventos.
             </p>
@@ -224,7 +224,7 @@
           </article>
 
           <article class="card-apoio">
-            <div class="card-apoio__icone" aria-hidden="true">?</div>
+            <div class="card-apoio__icone" aria-hidden="true"><i class="fa-regular fa-circle-question"></i></div>
             <h3 class="card-apoio__titulo">Central de Ajuda</h3>
             <p class="card-apoio__texto">
               Respostas imediatas para as perguntas mais frequentes da comunidade.
@@ -236,69 +236,94 @@
     </section>
   </main>
 
-  <footer class="rodape-contato" aria-label="Rodapé institucional">
-    <div class="rodape-contato__container">
-      <section class="rodape-contato__marca" aria-label="Marca e redes sociais">
-        <a href="../index.html" aria-label="Voltar para a página inicial">
-          <img
-            src="../images/logo-acb-fundo-transparente.png"
-            alt="Logo da ACB Brasil"
-            class="rodape-contato__logo"
-          />
+  <!-- ===== RODAPÉ ===== -->
+  <footer class="rodape">
+
+    <div class="rodape-principal">
+
+      <!-- Coluna de identidade -->
+      <div class="rodape-identidade">
+        <a href="../index.html" class="logo logo--rodape" aria-label="ACB - Página inicial">
+          <img src="../images/logo-acb-fundo-transparente.png" alt="ACB - Associação de Conselheiros do Brasil"
+            class="logo-imagem logo-imagem--rodape" />
         </a>
-
-        <p class="rodape-contato__descricao">
-          Lorem ipsum dolor sit amet consectetur.
-          Senectus ultrices faucibus consequat neque
+        <p class="rodape-descricao">
+          A Associação de Conselheiros do Brasil (ACB) é uma entidade dedicada ao fortalecimento da governança corporativa no país.
         </p>
+        <div class="rodape-redes-sociais">
+          <a href="#" class="rede-social-link" aria-label="Compartilhar">
+            <i class="fa-solid fa-share-nodes"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/associacao-de-conselheiros-do-brasil/" class="rede-social-link"
+            aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="https://www.youtube.com/@acbrasil" class="rede-social-link" aria-label="YouTube" target="_blank"
+            rel="noopener noreferrer">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+          <a href="https://www.instagram.com/acbrasil.oficial/" class="rede-social-link" aria-label="Instagram"
+            target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="#" class="rede-social-link" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
 
-        <ul class="rodape-contato__redes" aria-label="Redes sociais">
-          <li><a href="#" aria-label="Compartilhar">↗</a></li>
-          <li><a href="#" aria-label="Rede social 1">◉</a></li>
-          <li><a href="#" aria-label="LinkedIn">in</a></li>
-          <li><a href="#" aria-label="YouTube">▶</a></li>
-          <li><a href="#" aria-label="Rede social 2">◎</a></li>
-          <li><a href="#" aria-label="WhatsApp">◌</a></li>
+      <!-- Coluna de navegação -->
+      <div class="rodape-coluna">
+        <h2 class="rodape-titulo-coluna">Navegação</h2>
+        <ul class="rodape-lista">
+          <li><a href="newsletter.html" class="rodape-link">Notícias</a></li>
+          <li><a href="contato.html" class="rodape-link">Contato</a></li>
+          <li><a href="insights.html" class="rodape-link">Insights</a></li>
+          <li><a href="sobre.html" class="rodape-link">Sobre nós</a></li>
+          <li><a href="faq.html" class="rodape-link">FAQ</a></li>
         </ul>
-      </section>
+      </div>
 
-      <nav class="rodape-contato__coluna" aria-label="Navegação do rodapé">
-        <h2>NAVEGAÇÃO</h2>
-        <ul>
-          <li><a href="./newsletter.html">Notícias</a></li>
-          <li><a href="./contato.html">Contato</a></li>
-          <li><a href="./insights.html">Insights</a></li>
-          <li><a href="./sobre.html">Sobre nós</a></li>
+      <!-- Coluna de associados -->
+      <div class="rodape-coluna">
+        <h2 class="rodape-titulo-coluna">Associados</h2>
+        <ul class="rodape-lista">
+          <li><a href="associe-se.html" class="rodape-link">Torne-se Membro</a></li>
+          <li><a href="#" class="rodape-link">Portal Privativo</a></li>
+          <li><a href="#" class="rodape-link">Benefícios</a></li>
         </ul>
-      </nav>
+      </div>
 
-      <nav class="rodape-contato__coluna" aria-label="Área dos associados">
-        <h2>ASSOCIADOS</h2>
-        <ul>
-          <li><a href="./associe-se.html">Torne-se Membro</a></li>
-          <li><a href="./login.html">Portal Privado</a></li>
-          <li><a href="#">Benefícios</a></li>
+      <!-- Coluna de suporte -->
+      <div class="rodape-coluna">
+        <h2 class="rodape-titulo-coluna">Suporte Institucional</h2>
+        <ul class="rodape-lista rodape-lista--contato">
+          <li>
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:contato@acbrasil.org" class="rodape-link">contato@acbrasil.org</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:+5521100000000" class="rodape-link">+55 (21) 1000-0000</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-location-dot"></i>
+            <span class="rodape-texto">Av. das Américas, 1000 - RJ</span>
+          </li>
         </ul>
-      </nav>
+      </div>
 
-      <section class="rodape-contato__coluna" aria-label="Suporte institucional">
-        <h2>Suporte Institucional</h2>
-        <address>
-          <p><a href="mailto:contato@acbrasil.org">✉ contato@acbrasil.org</a></p>
-          <p><a href="tel:+552110000000">✆ +55 (21) 1000-0000</a></p>
-          <p>⌂ Av. das Américas, 1000 - RJ</p>
-        </address>
-      </section>
     </div>
 
-    <div class="rodape-contato__base">
-      <p>© 2026 JUAN LUCAS. TODOS OS DIREITOS RESERVADOS.</p>
-
-      <div class="rodape-contato__links">
-        <a href="#">POLÍTICA DE COOKIES</a>
-        <a href="#">POLÍTICA DE PRIVACIDADE</a>
+    <!-- Rodapé inferior -->
+    <div class="rodape-inferior">
+      <p class="rodape-direitos">© 2026 Associação de Conselheiros do Brasil. Todos os direitos reservados.</p>
+      <div class="rodape-politicas">
+        <a href="#" class="rodape-politica-link">Política de Cookies</a>
+        <a href="#" class="rodape-politica-link">Política de Privacidade</a>
       </div>
     </div>
+
   </footer>
 </body>
 </html>
