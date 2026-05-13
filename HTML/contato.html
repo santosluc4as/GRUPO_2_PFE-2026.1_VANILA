@@ -14,55 +14,55 @@
   <!-- Font Awesome para ícones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
+  <!-- Css -->
   <link rel="stylesheet" href="../CSS/global.css">
   <link rel="stylesheet" href="../CSS/contato.css" />
+  
+  <!-- JavaScript -->
   <script src="../JS/Contato.js" defer></script>
+  <script src="../JS/global.js" defer></script>
 </head>
 <body>
   <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
 
-  <header class="cabecalho" id="cabecalho">
-    <nav class="navegacao" role="navigation" aria-label="Menu principal">
-
-      <!-- Logo -->
-      <a href="../index.html" class="logo" aria-label="ACB - Página inicial">
-        <img src="../images/logo.png" alt="ACB - Associação de Conselheiros do Brasil" class="logo-imagem">
+  <!-- Header -->
+  <header id="cabecalho" class="cabecalho">
+    <nav class="navegacao">
+      <a href="../index.html" class="logo" aria-label="Home ACB Brasil">
+        <img src="../images/logo.png" alt="ACB Brasil" class="logo-imagem">
       </a>
-
-      <!-- Links de navegação (desktop) -->
-      <ul class="menu-lista" role="list">
+      
+      <ul class="menu-lista">
         <li class="menu-item"><a href="../index.html" class="menu-link">Início</a></li>
         <li class="menu-item"><a href="sobre.html" class="menu-link">Sobre nós</a></li>
-        <li class="menu-item"><a href="insights.html" class="menu-link">Insights</a></li>
+        <li class="menu-item"><a href="insights.html" class="menu-link menu-link--ativo">Insights</a></li>
         <li class="menu-item"><a href="newsletter.html" class="menu-link">Notícias</a></li>
-        <li class="menu-item"><a href="contato.html" class="menu-link menu-link--ativo">Contato</a></li>
+        <li class="menu-item"><a href="contato.html" class="menu-link">Contato</a></li>
       </ul>
-
-      <!-- Ações da navbar -->
+      
       <div class="navbar-acoes">
-        <button class="btn-busca" id="btnBusca" aria-label="Abrir busca">
+        <button id="btnBusca" class="btn-busca" aria-label="Abrir busca">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
-        <a href="associe-se.html" class="btn-area-associados">Área de Associados</a>
-        <button class="btn-menu-mobile" id="btnMenuMobile" aria-label="Abrir menu" aria-expanded="false">
+        <a href="#" class="btn-area-associados">Área de Associados</a>
+        <button id="btnMenuMobile" class="btn-menu-mobile" aria-label="Menu mobile" aria-expanded="false">
           <span class="hamburguer-linha"></span>
           <span class="hamburguer-linha"></span>
           <span class="hamburguer-linha"></span>
         </button>
       </div>
-
     </nav>
-
+    
     <!-- Menu Mobile -->
-    <div class="menu-mobile" id="menuMobile" aria-hidden="true">
-      <ul class="menu-mobile-lista" role="list">
-        <li><a href="../index.html" class="menu-mobile-link">Início</a></li>
-        <li><a href="sobre.html" class="menu-mobile-link">Sobre nós</a></li>
-        <li><a href="insights.html" class="menu-mobile-link">Insights</a></li>
-        <li><a href="newsletter.html" class="menu-mobile-link">Notícias</a></li>
-        <li><a href="contato.html" class="menu-mobile-link">Contato</a></li>
-        <li><a href="associe-se.html" class="menu-mobile-link menu-mobile-link--destaque">Área de Associados</a></li>
-      </ul>
+    <div id="menuMobile" class="menu-mobile" aria-hidden="true">
+      <ul class="menu-mobile-lista">
+            <li><a href="../index.html" class="menu-mobile-link">Início</a></li>
+            <li><a href="sobre.html" class="menu-mobile-link">Sobre nós</a></li>
+            <li><a href="insights.html" class="menu-mobile-link">Insights</a></li>
+            <li><a href="newsletter.html" class="menu-mobile-link">Notícias</a></li>
+            <li><a href="contato.html" class="menu-mobile-link">Contato</a></li>
+            <li><a href="associe-se.html" class="menu-mobile-link menu-mobile-link--destaque">Área de Associados</a></li>
+          </ul>
     </div>
   </header>
 
@@ -108,7 +108,7 @@
             <div class="mapa-contato__janela">
               <p class="mapa-contato__frase">Nos visite!</p>
               <a
-                href="https://www.google.com/maps"
+                href="https://www.google.com/maps/search/?api=1&query=Av.+das+Am%C3%A9ricas,+1000,+Rio+de+Janeiro,+RJ"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="mapa-contato__botao"
@@ -300,6 +300,5 @@
       </div>
     </div>
   </footer>
-    <script src="../JS/global.js"></script>
 </body>
 </html>

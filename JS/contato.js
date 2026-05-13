@@ -1,5 +1,5 @@
 /*
-=========================================================
+==========================================
   CONTATO.JS
   Script inicial da página de contato.
 
@@ -8,7 +8,7 @@
   2. Exibir mensagens acessíveis de erro
   3. Simular envio bem-sucedido
   4. Manter o JS isolado desta página
-=========================================================
+==========================================
 */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -44,11 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
     assunto.removeAttribute("aria-invalid");
     mensagem.removeAttribute("aria-invalid");
   }
-
+  
   /*
     Validação simples de e-mail.
-    Não é perfeita para todos os casos do mundo real,
-    mas atende bem ao front-end inicial.
   */
   function emailValido(valor) {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
