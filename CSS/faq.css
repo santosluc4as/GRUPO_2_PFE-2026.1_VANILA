@@ -298,6 +298,10 @@ aside {
 
 @media (max-width: 760px) {
 
+    .hero {
+        margin: 0;
+    }
+
     .hero_container {
         padding: 56px 48px 42px 62px;
     }
@@ -313,6 +317,10 @@ aside {
     .hero_decoracao {
         width: 180px;
         height: 94px;
+    }
+
+    .faq-div {
+        margin: 0;
     }
 
     .faq-div > div {
