@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights — ACB Brasil</title>
+  
+  <!-- SEO -->
+  <meta name="description" content="Explore artigos, pesquisas e conhecimentos institucionais da ACB Brasil.">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="global.css">
+  
+  <!-- Page Specific Styles -->
+  <link rel="stylesheet" href="insights.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="cabecalho" class="cabecalho">
+    <nav class="navegacao">
+      <a href="index.html" class="logo" aria-label="Home ACB Brasil">
+        <img src="logo.png" alt="ACB Brasil" class="logo-imagem">
+      </a>
+      
+      <ul class="menu-lista">
+        <li class="menu-item"><a href="index.html" class="menu-link">Início</a></li>
+        <li class="menu-item"><a href="sobre.html" class="menu-link">Sobre nós</a></li>
+        <li class="menu-item"><a href="insights.html" class="menu-link menu-link--ativo">Insights</a></li>
+        <li class="menu-item"><a href="noticias.html" class="menu-link">Notícias</a></li>
+        <li class="menu-item"><a href="contato.html" class="menu-link">Contato</a></li>
+      </ul>
+      
+      <div class="navbar-acoes">
+        <button id="btnBusca" class="btn-busca" aria-label="Abrir busca">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <a href="#" class="btn-area-associados">Área de Associados</a>
+        <button id="btnMenuMobile" class="btn-menu-mobile" aria-label="Menu mobile" aria-expanded="false">
+          <span class="hamburguer-linha"></span>
+          <span class="hamburguer-linha"></span>
+          <span class="hamburguer-linha"></span>
+        </button>
+      </div>
+    </nav>
+    
+    <!-- Menu Mobile -->
+    <div id="menuMobile" class="menu-mobile" aria-hidden="true">
+      <ul class="menu-mobile-lista">
+        <li><a href="index.html" class="menu-mobile-link">Início</a></li>
+        <li><a href="sobre.html" class="menu-mobile-link">Sobre nós</a></li>
+        <li><a href="insights.html" class="menu-mobile-link menu-mobile-link--ativo">Insights</a></li>
+        <li><a href="noticias.html" class="menu-mobile-link">Notícias</a></li>
+        <li><a href="contato.html" class="menu-mobile-link">Contato</a></li>
+        <li><a href="#" class="menu-mobile-link menu-mobile-link--destaque">Área de Associados</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Search Overlay -->
+  <div id="buscaOverlay" class="busca-overlay" aria-hidden="true">
+    <div class="busca-container">
+      <div class="busca-cabecalho">
+        <h2 class="busca-titulo">O que você procura?</h2>
+        <button id="buscaFechar" class="busca-fechar" aria-label="Fechar busca">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="busca-campo-wrapper">
+        <i class="fa-solid fa-magnifying-glass busca-icone"></i>
+        <input type="text" id="buscaInput" class="busca-campo" placeholder="Digite para pesquisar...">
+      </div>
+      <div id="buscaResultados" class="busca-resultados">
+        <!-- Results via JS -->
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-insights">
+      <div class="container container--hero">
+        <div class="hero-conteudo">
+          <span class="hero-tag animacao-entrada">Repositório Institucional</span>
+          <h1 class="hero-titulo animacao-entrada" data-delay="1">Artigos e Conhecimentos</h1>
+          <div class="hero-decoracao animacao-entrada" data-delay="2"></div>
+        </div>
+        <div class="hero-texto-intro animacao-entrada" data-delay="3">
+          <p>Explore as tendências mais recentes, pesquisas aprofundadas e análises exclusivas preparadas pelos especialistas e conselheiros da ACB Brasil para impulsionar a governança corporativa.</p>
+        </div>
+      </div>
+      
+    <!-- Featured Post (Dynamic) -->
+    <div id="featuredContainer" class="container container--featured animacao-entrada" data-delay="4">
+      <div class="featured-grid">
+        <div class="featured-imagem-wrapper">
+          <div class="skeleton" style="height: 400px; background: #eee;"></div>
+        </div>
+        <div class="featured-card">
+          <div class="skeleton" style="height: 20px; width: 100px; margin-bottom: 10px;"></div>
+          <div class="skeleton" style="height: 40px; margin-bottom: 20px;"></div>
+          <div class="skeleton" style="height: 100px; margin-bottom: 20px;"></div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <!-- Filter & Search Section -->
+    <section class="secao-filtros">
+      <div class="container container--filtros">
+        <div class="filtros-wrapper">
+          <div class="filtros-botoes">
+            <button class="btn-filtro btn-filtro--ativo">Todos</button>
+            <button class="btn-filtro">Compliance</button>
+            <button class="btn-filtro">Diversidade</button>
+            <button class="btn-filtro">Energia</button>
+            <button class="btn-filtro">Governança</button>
+          </div>
+          
+          <div class="paginacao-topo">
+            <span class="pag-item pag-item--ativo">1</span>
+            <span class="pag-item">2</span>
+            <span class="pag-item">3</span>
+            <span class="pag-item pag-separador">...</span>
+            <span class="pag-item">6</span>
+            <button class="pag-item pag-proximo" aria-label="Próxima página"><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+
+          <div class="busca-arquivo">
+            <div class="busca-arquivo-campo">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" placeholder="Buscar no arquivo...">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Article Grid (Dynamic) -->
+    <section class="secao-grid">
+      <div class="container container--grid">
+        <div id="gridInsights" class="grid-insights">
+          <!-- Populated via JS -->
+          <div class="skeleton-card" style="height: 300px; background: #f5f5f5;"></div>
+          <div class="skeleton-card" style="height: 300px; background: #f5f5f5;"></div>
+          <div class="skeleton-card" style="height: 300px; background: #f5f5f5;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="secao-newsletter animacao-entrada">
+      <div class="newsletter-bg">
+        <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=1200" alt="Escritório desfocado" class="newsletter-img">
+        <div class="newsletter-overlay"></div>
+      </div>
+      <div class="container container--newsletter">
+        <h2 class="newsletter-titulo">Acompanhe nossos Artigos</h2>
+        <p class="newsletter-subtitulo">Receba diretamente em seu e-mail as principais atualizações sobre governança, compliance e tendências de mercado da ACB Brasil.</p>
+        
+        <form class="newsletter-form">
+          <input type="email" placeholder="Seu e-mail" required class="newsletter-input" aria-label="Seu e-mail">
+          <button type="submit" class="newsletter-btn">INSCREVER-SE</button>
+        </form>
+        <p class="newsletter-aviso">RESPEITAMOS SUA PRIVACIDADE. CANCELE A QUALQUER MOMENTO.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape-principal">
+      <div class="rodape-identidade">
+        <a href="index.html" class="logo-rodape-wrapper">
+          <img src="logo-acb-fundo-transparente.png" alt="ACB Brasil" class="logo-imagem--rodape">
+        </a>
+        <p class="rodape-descricao">
+          Repositório Institucional da Associação de Conselheiros do Brasil. Conhecimento e transparência para o mercado.
+        </p>
+        <div class="rodape-redes-sociais">
+          <a href="#" class="rede-social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="rede-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="rede-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="rede-social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" class="rede-social-link" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      
+      <div class="rodape-coluna">
+        <h3 class="rodape-titulo-coluna">Navegação</h3>
+        <ul class="rodape-lista">
+          <li><a href="index.html" class="rodape-link">Início</a></li>
+          <li><a href="sobre.html" class="rodape-link">Sobre nós</a></li>
+          <li><a href="insights.html" class="rodape-link">Insights</a></li>
+          <li><a href="noticias.html" class="rodape-link">Notícias</a></li>
+          <li><a href="contato.html" class="rodape-link">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="rodape-coluna">
+        <h3 class="rodape-titulo-coluna">Associados</h3>
+        <ul class="rodape-lista">
+          <li><a href="#" class="rodape-link">Torne-se Membro</a></li>
+          <li><a href="#" class="rodape-link">Portal Privado</a></li>
+          <li><a href="#" class="rodape-link">Benefícios</a></li>
+        </ul>
+      </div>
+
+      <div class="rodape-coluna">
+        <h3 class="rodape-titulo-coluna">Suporte Institucional</h3>
+        <ul class="rodape-lista rodape-lista--contato">
+          <li>
+            <i class="fa-solid fa-envelope"></i>
+            <span class="rodape-texto">contato@acbrasil.org.br</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone"></i>
+            <span class="rodape-texto">+55 (21) 1000-0000</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-location-dot"></i>
+            <span class="rodape-texto">Av. das Américas, 1000 - RJ</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="rodape-inferior">
+      <p class="rodape-direitos">© 2026 JUAN LUCAS. TODOS OS DIREITOS RESERVADOS.</p>
+      <div class="rodape-politicas">
+        <a href="#" class="rodape-politica-link">Política de Cookies</a>
+        <a href="#" class="rodape-politica-link">Política de Privacidade</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast (Required by global.js) -->
+  <div id="toast" class="toast" aria-hidden="true">
+    <i class="toast-icone fa-solid"></i>
+    <span class="toast-mensagem"></span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="global.js"></script>
+  <script src="insights.js"></script>
+</body>
+</html>
