@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACBrasil - Governança que transforma empresas</title>
+    
+    <!-- fontes do google: inter e montserrat/newsreader (padronização) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- ícones do font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- CSS padrão e específico -->
+    <link rel="stylesheet" href="CSS/global.css">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+
+    <!-- ===== BARRA DE PROGRESSO DE SCROLL ===== -->
+    <div class="barra-progresso-scroll" id="barraProgressoScroll"></div>
+
+    <!-- ===== BARRA DE BUSCA GLOBAL ===== -->
+    <div class="busca-overlay" id="buscaOverlay" role="dialog" aria-label="Busca no site" aria-hidden="true">
+        <div class="busca-container">
+            <div class="busca-cabecalho">
+                <span class="busca-titulo">O que você procura?</span>
+                <button class="busca-fechar" id="buscaFechar" aria-label="Fechar busca">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="busca-campo-wrapper">
+                <i class="fa-solid fa-magnifying-glass busca-icone"></i>
+                <input type="text" id="buscaInput" class="busca-campo" placeholder="Buscar páginas, conteúdos, associados..."
+                    autocomplete="off" />
+            </div>
+            <div class="busca-resultados" id="buscaResultados">
+                <p class="busca-dica">Digite para buscar páginas e conteúdos do site.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== NAVBAR ===== -->
+    <header class="cabecalho" id="cabecalho">
+        <nav class="navegacao" role="navigation" aria-label="Menu principal">
+
+            <!-- Logo -->
+            <a href="index.html" class="logo" aria-label="ACB - Página inicial">
+                <img src="images/logo.png" alt="ACB - Associação de Conselheiros do Brasil" class="logo-imagem">
+            </a>
+
+            <!-- Links de navegação (desktop) -->
+            <ul class="menu-lista" role="list">
+                <li class="menu-item"><a href="index.html" class="menu-link menu-link--ativo">Início</a></li>
+                <li class="menu-item"><a href="HTML/sobre.html" class="menu-link">Sobre nós</a></li>
+                <li class="menu-item"><a href="HTML/insights.html" class="menu-link">Insights</a></li>
+                <li class="menu-item"><a href="HTML/newsletter.html" class="menu-link">Notícias</a></li>
+                <li class="menu-item"><a href="HTML/contato.html" class="menu-link">Contato</a></li>
+            </ul>
+
+            <!-- Ações da navbar -->
+            <div class="navbar-acoes">
+                <button class="btn-busca" id="btnBusca" aria-label="Abrir busca">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <a href="HTML/associe-se.html" class="btn-area-associados">Área de Associados</a>
+                <button class="btn-menu-mobile" id="btnMenuMobile" aria-label="Abrir menu" aria-expanded="false">
+                    <span class="hamburguer-linha"></span>
+                    <span class="hamburguer-linha"></span>
+                    <span class="hamburguer-linha"></span>
+                </button>
+            </div>
+
+        </nav>
+
+        <!-- Menu Mobile -->
+        <div class="menu-mobile" id="menuMobile" aria-hidden="true">
+            <ul class="menu-mobile-lista" role="list">
+                <li><a href="index.html" class="menu-mobile-link">Início</a></li>
+                <li><a href="HTML/sobre.html" class="menu-mobile-link">Sobre nós</a></li>
+                <li><a href="HTML/insights.html" class="menu-mobile-link">Insights</a></li>
+                <li><a href="HTML/newsletter.html" class="menu-mobile-link">Notícias</a></li>
+                <li><a href="HTML/contato.html" class="menu-mobile-link">Contato</a></li>
+                <li><a href="HTML/associe-se.html" class="menu-mobile-link menu-mobile-link--destaque">Área de Associados</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Seção Principal (Hero) -->
+    <section class="hero-home">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="hero-tag">Conselho de Excelência</span>
+                <h1>Governança que transforma empresas. Conselheiros que transformam o Brasil.</h1>
+                <p>O maior portal de governança corporativa do país. Conteúdo, eventos e networking para profissionais
+                    que buscam impacto no conselho de administração.</p>
+                <div class="hero-buttons">
+                    <a href="HTML/newsletter.html" class="btn btn-secondary">Veja as novidades <i class="fas fa-arrow-right"></i></a>
+                    <a href="#" class="btn btn-outline">Eventos</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <div class="hero-image-placeholder">
+                    <img src="images/hero.png" alt="Governança Corporativa" class="placeholder-img">
+                </div>
+                <div class="hero-quote">
+                    <p>"A inovação começa na mesa do conselho, guiando a empresa para o futuro."</p>
+                </div>
+            </div>
+        </div>
+        <!-- elementos de fundo decorativos -->
+        <div class="hero-bg-yellow"></div>
+        <div class="hero-bg-map"></div>
+    </section>
+
+    <!-- Indicadores Econômicos -->
+    <section class="indicators-section">
+        <div class="container">
+            <div class="indicators-header">
+                <h2>Indicadores Econômicos</h2>
+                <span class="update-rate" id="update-rate-text">Atualizando...</span>
+            </div>
+            <p class="indicators-subtitle">Monitoramento em tempo real</p>
+
+            <div class="indicators-grid" id="indicators-container">
+                <!-- o javascript vai injetar os indicadores reais aqui -->
+                <div class="indicator-card loading-skeleton"></div>
+                <div class="indicator-card loading-skeleton"></div>
+                <div class="indicator-card loading-skeleton"></div>
+                <div class="indicator-card loading-skeleton"></div>
+                <div class="indicator-card loading-skeleton"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Artigos -->
+    <section class="articles-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Artigos mais recentes</h2>
+                <a href="https://acbrasil.org.br/cms/c/noticias/" class="view-all" target="_blank">Ver todo o acervo <i
+                        class="fas fa-arrow-right"></i></a>
+            </div>
+            <p class="section-subtitle">Acompanhe as últimas tendências e análises em governança.</p>
+
+            <div class="articles-grid" id="articles-container">
+                <!-- Artigo destaque - skeleton -->
+                <article class="article-card featured loading-skeleton">
+                    <div class="article-image"></div>
+                    <div class="article-content">
+                        <div class="skeleton-line" style="width:60%;height:14px;margin-bottom:12px;"></div>
+                        <div class="skeleton-line" style="width:90%;height:22px;margin-bottom:12px;"></div>
+                        <div class="skeleton-line" style="width:100%;height:14px;margin-bottom:8px;"></div>
+                        <div class="skeleton-line" style="width:80%;height:14px;"></div>
+                    </div>
+                </article>
+                <!-- Artigos laterais - skeleton -->
+                <div class="articles-list">
+                    <article class="article-card small loading-skeleton">
+                        <div class="article-image"></div>
+                        <div class="article-content">
+                            <div class="skeleton-line" style="width:50%;height:12px;margin-bottom:8px;"></div>
+                            <div class="skeleton-line" style="width:90%;height:18px;margin-bottom:8px;"></div>
+                            <div class="skeleton-line" style="width:100%;height:12px;"></div>
+                        </div>
+                    </article>
+                    <article class="article-card small loading-skeleton">
+                        <div class="article-image"></div>
+                        <div class="article-content">
+                            <div class="skeleton-line" style="width:50%;height:12px;margin-bottom:8px;"></div>
+                            <div class="skeleton-line" style="width:90%;height:18px;margin-bottom:8px;"></div>
+                            <div class="skeleton-line" style="width:100%;height:12px;"></div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- parte mostrando os eventos -->
+    <section class="events-section bg-light">
+        <div class="container">
+            <h2>Eventos & Webinars</h2>
+
+            <div class="events-grid">
+                <!-- primeiro evento -->
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-date">
+                            <span class="day">12</span>
+                            <span class="month">Jul</span>
+                        </div>
+                        <div class="event-meta">
+                            <span class="type"><i class="fas fa-video"></i> Online</span>
+                            <span class="time"><i class="far fa-clock"></i> 19h às 21h</span>
+                        </div>
+                    </div>
+                    <h3>Seminário: O Papel do Conselho Digital</h3>
+                    <p>Discussão sobre a transformação digital nas esferas mais altas da administração e as novas
+                        responsabilidades.</p>
+                    <a href="#" class="event-link">Inscreva-se <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- segundo evento -->
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-date">
+                            <span class="day">05</span>
+                            <span class="month">Ago</span>
+                        </div>
+                        <div class="event-meta">
+                            <span class="type"><i class="fas fa-map-marker-alt"></i> Presencial</span>
+                            <span class="time"><i class="far fa-clock"></i> 09h às 18h</span>
+                        </div>
+                    </div>
+                    <h3>Workshop: Governança Ambiental</h3>
+                    <p>Práticas ESG para conselheiros. Como integrar sustentabilidade na estratégia de longo prazo da
+                        empresa.</p>
+                    <a href="#" class="event-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- terceiro evento -->
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-date">
+                            <span class="day">22</span>
+                            <span class="month">Ago</span>
+                        </div>
+                        <div class="event-meta">
+                            <span class="type"><i class="fas fa-video"></i> Online</span>
+                            <span class="time"><i class="far fa-clock"></i> 18h às 20h</span>
+                        </div>
+                    </div>
+                    <h3>Webinar: Tendências para 2025</h3>
+                    <p>Um painel com especialistas debatendo o futuro da governança corporativa no cenário brasileiro e
+                        global.</p>
+                    <a href="#" class="event-link">Inscreva-se <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- seção final chamando pra participar -->
+    <section class="cta-section">
+        <div class="cta-overlay"></div>
+        <div class="container cta-content">
+            <h2>Seu lugar na mesa principal da <span class="highlight">ACBrasil</span></h2>
+            <p>Junte-se a uma rede exclusiva de profissionais, conselheiros e especialistas. Tenha acesso a conteúdos
+                premium, eventos restritos e oportunidades únicas de networking.</p>
+            <a href="HTML/associe-se.html" class="btn btn-yellow">Seja um Associado</a>
+        </div>
+    </section>
+
+    <!-- rodapé da página -->
+    <footer class="rodape">
+
+        <div class="rodape-principal">
+
+            <!-- Coluna de identidade -->
+            <div class="rodape-identidade">
+                <a href="index.html" class="logo logo--rodape" aria-label="ACB - Página inicial">
+                    <img src="images/logo-acb-fundo-transparente.png" alt="ACB - Associação de Conselheiros do Brasil"
+                        class="logo-imagem logo-imagem--rodape" />
+                </a>
+                <p class="rodape-descricao">
+                    Governança que transforma empresas.<br>Conselheiros que transformam o Brasil.
+                </p>
+                <div class="rodape-redes-sociais">
+                    <a href="#" class="rede-social-link" aria-label="Compartilhar">
+                        <i class="fa-solid fa-share-nodes"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/associacao-de-conselheiros-do-brasil/" class="rede-social-link"
+                        aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@acbrasil" class="rede-social-link" aria-label="YouTube" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a href="https://www.instagram.com/acbrasil.oficial/" class="rede-social-link" aria-label="Instagram"
+                        target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="rede-social-link" aria-label="WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Coluna de navegação -->
+            <div class="rodape-coluna">
+                <h2 class="rodape-titulo-coluna">Navegação</h2>
+                <ul class="rodape-lista">
+                    <li><a href="HTML/newsletter.html" class="rodape-link">Notícias</a></li>
+                    <li><a href="HTML/contato.html" class="rodape-link">Contato</a></li>
+                    <li><a href="HTML/insights.html" class="rodape-link">Insights</a></li>
+                    <li><a href="HTML/sobre.html" class="rodape-link">Sobre nós</a></li>
+                    <li><a href="HTML/faq.html" class="rodape-link">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Coluna de associados -->
+            <div class="rodape-coluna">
+                <h2 class="rodape-titulo-coluna">Associados</h2>
+                <ul class="rodape-lista">
+                    <li><a href="HTML/associe-se.html" class="rodape-link">Torne-se Membro</a></li>
+                    <li><a href="#" class="rodape-link">Portal Privativo</a></li>
+                    <li><a href="#" class="rodape-link">Benefícios</a></li>
+                </ul>
+            </div>
+
+            <!-- Coluna de suporte -->
+            <div class="rodape-coluna">
+                <h2 class="rodape-titulo-coluna">Suporte Institucional</h2>
+                <ul class="rodape-lista rodape-lista--contato">
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:contato@acbrasil.org" class="rodape-link">contato@acbrasil.org</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:+5521100000000" class="rodape-link">+55 (21) 1000-0000</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span class="rodape-texto">Av. das Américas, 1000 - RJ</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Rodapé inferior -->
+        <div class="rodape-inferior">
+            <p class="rodape-direitos">© 2026 Associação de Conselheiros do Brasil. Todos os direitos reservados.</p>
+            <div class="rodape-politicas">
+                <a href="#" class="rodape-politica-link">Política de Cookies</a>
+                <a href="#" class="rodape-politica-link">Política de Privacidade</a>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- ===== TOAST DE NOTIFICAÇÃO ===== -->
+    <div class="toast" id="toast" role="alert" aria-live="assertive" aria-hidden="true">
+        <i class="toast-icone fa-solid fa-circle-check"></i>
+        <span class="toast-mensagem"></span>
+    </div>
+
+    <!-- VLibras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script src="JS/global.js"></script>
+    <script src="JS/script.js"></script>
+</body>
+
+</html>

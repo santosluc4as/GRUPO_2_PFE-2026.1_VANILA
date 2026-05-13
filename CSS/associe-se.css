@@ -1,0 +1,654 @@
+/* ==========================================================================
+   ACB - Associação de Conselheiros do Brasil
+   associe-se.css — Estilos exclusivos da página Associe-se
+   Depende de: global.css (deve ser carregado antes)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. LAYOUT PRINCIPAL DA PÁGINA
+   -------------------------------------------------------------------------- */
+.conteudo-principal {
+  padding-top: var(--altura-navbar);
+}
+
+/* --------------------------------------------------------------------------
+   2. SEÇÃO HERO
+   -------------------------------------------------------------------------- */
+.secao-hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--cor-cinza-claro);
+  padding: 0 var(--espaco-lg);
+  display: flex;
+  min-height: 100vh;
+  align-items: stretch;
+}
+
+.hero-caixa-conteudo {
+  position: relative;
+  z-index: 1;
+  background: var(--cor-branco);
+ 
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--espaco-3xl) var(--espaco-2xl);
+  box-shadow: var(--sombra-lg);
+}
+
+/* Decorações geométricas de fundo */
+/*
+.hero-decoracao-linha {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 60%;
+  background: linear-gradient(180deg, var(--cor-dourado), transparent);
+  pointer-events: none;
+  animation: aparecer 1s ease 0.5s both;
+}
+*/
+.hero-grade {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaco-2xl);
+}
+
+/* --------------------------------------------------------------------------
+   3. COLUNA ESQUERDA (Textos e Categorias)
+   -------------------------------------------------------------------------- */
+.hero-coluna-esquerda {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-xl);
+}
+
+/* Rótulo de seção */
+.rotulo-secao {
+  display: inline-block;
+  font-size: var(--texto-xs);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cor-dourado);
+}
+
+/* Título hero */
+.hero-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: var(--texto-3xl);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--cor-azul-escuro);
+  letter-spacing: -0.5px;
+}
+
+.hero-titulo-destaque {
+  font-style: italic;
+  color: var(--cor-dourado);
+  font-weight: 600;
+}
+
+/* Descrição */
+.hero-descricao {
+  font-size: var(--texto-base);
+  color: var(--cor-cinza-texto);
+  line-height: 1.75;
+  max-width: 520px;
+}
+
+/* --------------------------------------------------------------------------
+   4. CARD DE ÉTICA
+   -------------------------------------------------------------------------- */
+.card-etica {
+  display: flex;
+  background: var(--cor-cinza-claro);
+  border-radius: var(--raio-lg);
+  overflow: hidden;
+  transition: transform var(--transicao-media), box-shadow var(--transicao-media);
+}
+
+.card-etica:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--sombra-md);
+}
+
+.card-etica-barra {
+  width: 4px;
+  background: linear-gradient(180deg, var(--cor-dourado), var(--cor-dourado-claro));
+  flex-shrink: 0;
+}
+
+.card-etica-conteudo {
+  padding: var(--espaco-lg) var(--espaco-xl);
+}
+
+.card-etica-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: var(--texto-lg);
+  font-weight: 600;
+  color: var(--cor-azul-escuro);
+  margin-bottom: var(--espaco-sm);
+}
+
+.card-etica-texto {
+  font-size: var(--texto-sm);
+  color: var(--cor-cinza-texto);
+  line-height: 1.7;
+  margin-bottom: var(--espaco-md);
+}
+
+.card-etica-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espaco-sm);
+  font-size: var(--texto-xs);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--cor-dourado);
+  transition: gap var(--transicao-media), opacity var(--transicao-rapida);
+}
+
+.card-etica-link:hover {
+  gap: var(--espaco-md);
+  opacity: 0.8;
+}
+
+/* --------------------------------------------------------------------------
+   5. CATEGORIAS DE ASSOCIADOS
+   -------------------------------------------------------------------------- */
+.categorias {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-lg);
+}
+
+.categorias-cabecalho {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-md);
+}
+
+.categorias-linha-decorativa {
+  width: 40px;
+  height: 2px;
+  background: var(--cor-dourado);
+  flex-shrink: 0;
+}
+
+.categorias-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: var(--texto-xl);
+  font-weight: 600;
+  color: var(--cor-azul-escuro);
+  font-style: italic;
+}
+
+.categoria-item {
+  display: flex;
+  gap: var(--espaco-md);
+  padding: var(--espaco-lg);
+  border-radius: var(--raio-lg);
+  border: 1px solid var(--cor-borda);
+  background: var(--cor-branco);
+  transition: border-color var(--transicao-media),
+              transform var(--transicao-media),
+              box-shadow var(--transicao-media);
+  cursor: default;
+}
+
+.categoria-item:hover {
+  border-color: var(--cor-dourado);
+  transform: translateX(4px);
+  box-shadow: var(--sombra-sm);
+}
+
+.categoria-icone {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--raio-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--texto-md);
+  flex-shrink: 0;
+  transition: transform var(--transicao-media);
+}
+
+.categoria-item[data-tipo="mantenedor"] .categoria-icone {
+  background: rgba(200, 151, 42, 0.12);
+  color: var(--cor-dourado);
+}
+
+.categoria-item[data-tipo="efetivo"] .categoria-icone {
+  background: rgba(30, 51, 117, 0.1);
+  color: var(--cor-azul-medio);
+}
+
+.categoria-item[data-tipo="benemerito"] .categoria-icone {
+  background: rgba(200, 151, 42, 0.12);
+  color: var(--cor-dourado-claro);
+}
+
+.categoria-item:hover .categoria-icone {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.categoria-nome {
+  font-family: var(--fonte-texto);
+  font-size: var(--texto-base);
+  font-weight: 600;
+  color: var(--cor-azul-escuro);
+  margin-bottom: var(--espaco-xs);
+}
+
+.categoria-descricao {
+  font-size: var(--texto-sm);
+  color: var(--cor-cinza-texto);
+  line-height: 1.65;
+}
+
+/* --------------------------------------------------------------------------
+   6. COLUNA DIREITA — CARD DO FORMULÁRIO
+   -------------------------------------------------------------------------- */
+.hero-coluna-direita {
+  width: 100%;
+}
+
+/* Animação de tremedeira ao enviar com dados inválidos */
+@keyframes tremedeira {
+  0%   { transform: translateX(0); }
+  10%  { transform: translateX(-8px) rotate(-1deg); }
+  20%  { transform: translateX(8px) rotate(1deg); }
+  30%  { transform: translateX(-7px) rotate(-0.8deg); }
+  40%  { transform: translateX(7px) rotate(0.8deg); }
+  50%  { transform: translateX(-5px) rotate(-0.5deg); }
+  60%  { transform: translateX(5px) rotate(0.5deg); }
+  70%  { transform: translateX(-3px); }
+  80%  { transform: translateX(3px); }
+  90%  { transform: translateX(-1px); }
+  100% { transform: translateX(0); }
+}
+
+.formulario-card.tremendo {
+  animation: tremedeira 0.55s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.formulario-card {
+  background: var(--cor-branco);
+  border-radius: var(--raio-xl);
+  padding: var(--espaco-xl) var(--espaco-lg);
+  box-shadow: var(--sombra-xl);
+  border: 1px solid var(--cor-borda);
+  position: relative;
+  overflow: hidden;
+}
+
+.formulario-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--cor-azul-escuro), var(--cor-dourado), var(--cor-azul-medio));
+}
+
+.formulario-cabecalho {
+  text-align: center;
+  margin-bottom: var(--espaco-xl);
+}
+
+.formulario-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: var(--texto-2xl);
+  font-weight: 700;
+  color: var(--cor-azul-escuro);
+  margin-bottom: var(--espaco-sm);
+}
+
+.formulario-linha-dourada {
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--cor-dourado);
+  border-radius: var(--raio-full);
+  margin: 0 auto var(--espaco-md);
+}
+
+.formulario-subtitulo {
+  font-size: var(--texto-xs);
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--cor-cinza-texto);
+}
+
+/* --------------------------------------------------------------------------
+   7. CAMPOS DO FORMULÁRIO
+   -------------------------------------------------------------------------- */
+.formulario-adesao {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-lg);
+}
+
+.campos-linha {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaco-md);
+}
+
+.campo-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo-label {
+  font-size: var(--texto-xs);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--cor-azul-escuro);
+}
+
+.campo-input {
+  padding: var(--espaco-sm) var(--espaco-md);
+  border: 1.5px solid var(--cor-borda);
+  border-radius: var(--raio-md);
+  font-size: var(--texto-sm);
+  font-family: var(--fonte-texto);
+  color: var(--cor-texto-escuro);
+  background: var(--cor-cinza-claro);
+  outline: none;
+  transition: border-color var(--transicao-media),
+              box-shadow var(--transicao-media),
+              background var(--transicao-rapida);
+  width: 100%;
+}
+
+.campo-input::placeholder {
+  color: #aab0c2;
+  font-size: var(--texto-sm);
+}
+
+.campo-input:focus {
+  border-color: var(--cor-azul-medio);
+  box-shadow: 0 0 0 3px rgba(30, 51, 117, 0.1);
+  background: var(--cor-branco);
+}
+
+.campo-input.invalido {
+  border-color: var(--cor-erro);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.08);
+}
+
+.campo-input.valido {
+  border-color: var(--cor-sucesso);
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.08);
+}
+
+/* Select personalizado */
+.select-wrapper {
+  position: relative;
+}
+
+.campo-select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: var(--espaco-2xl);
+  cursor: pointer;
+}
+
+.select-icone {
+  position: absolute;
+  right: var(--espaco-md);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--cor-azul-escuro);
+  font-size: var(--texto-xs);
+  pointer-events: none;
+  transition: transform var(--transicao-media);
+}
+
+.select-wrapper:focus-within .select-icone {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* Mensagem de erro do campo */
+.campo-erro {
+  font-size: var(--texto-xs);
+  color: var(--cor-erro);
+  font-weight: 500;
+  display: none;
+  animation: deslizarCima 0.2s ease;
+}
+
+.campo-erro.visivel {
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   8. CHECKBOX E TERMOS
+   -------------------------------------------------------------------------- */
+.campo-termos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-xs);
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espaco-sm);
+  cursor: pointer;
+}
+
+.checkbox-container input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkbox-visual {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--cor-borda);
+  border-radius: var(--raio-sm);
+  background: var(--cor-cinza-claro);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color var(--transicao-media),
+              background var(--transicao-media),
+              transform var(--transicao-rapida);
+  margin-top: 2px;
+}
+
+.checkbox-visual::after {
+  content: '\f00c';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 11px;
+  color: var(--cor-branco);
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity var(--transicao-media), transform var(--transicao-media);
+}
+
+.checkbox-container input:checked + .checkbox-visual {
+  background: var(--cor-azul-escuro);
+  border-color: var(--cor-azul-escuro);
+  transform: scale(1.05);
+}
+
+.checkbox-container input:checked + .checkbox-visual::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.checkbox-container:hover .checkbox-visual {
+  border-color: var(--cor-azul-medio);
+}
+
+.checkbox-texto {
+  font-size: var(--texto-sm);
+  color: var(--cor-cinza-texto);
+  line-height: 1.5;
+}
+
+.link-termos {
+  color: var(--cor-azul-escuro);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 2px;
+  transition: text-decoration-color var(--transicao-rapida);
+}
+
+.link-termos:hover {
+  text-decoration-color: var(--cor-azul-escuro);
+}
+
+.campo-erro--termos {
+  padding-left: 28px;
+}
+
+/* --------------------------------------------------------------------------
+   9. BOTÃO DE ENVIO
+   -------------------------------------------------------------------------- */
+.btn-enviar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espaco-sm);
+  width: 100%;
+  padding: var(--espaco-md) var(--espaco-xl);
+  background: var(--cor-azul-escuro);
+  color: var(--cor-branco);
+  font-family: var(--fonte-texto);
+  font-size: var(--texto-sm);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: var(--raio-md);
+  border: 2px solid transparent;
+  transition: background var(--transicao-media),
+              transform var(--transicao-rapida),
+              box-shadow var(--transicao-media),
+              border-color var(--transicao-media);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito shimmer ao passar o mouse */
+.btn-enviar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+  transition: left 0.6s ease;
+}
+
+.btn-enviar:hover::before {
+  left: 100%;
+}
+
+.btn-enviar:hover {
+  background: var(--cor-dourado);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(200, 151, 42, 0.4);
+}
+
+.btn-enviar:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btn-enviar-icone {
+  transition: transform var(--transicao-media);
+}
+
+.btn-enviar:hover .btn-enviar-icone {
+  transform: translateX(4px);
+}
+
+/* Nota de privacidade */
+.formulario-nota {
+  font-size: var(--texto-xs);
+  color: var(--cor-cinza-texto);
+  text-align: center;
+  font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   10. RESPONSIVIDADE — TABLET (≥ 640px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 640px) {
+  .campos-linha {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .campos-linha--tres {
+    grid-template-columns: 1fr 100px 1fr;
+  }
+
+  .formulario-card {
+    padding: var(--espaco-2xl);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   11. RESPONSIVIDADE — DESKTOP MÉDIO (≥ 768px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+  .hero-titulo {
+    font-size: var(--texto-4xl);
+  }
+
+  .hero-grade {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espaco-3xl);
+    align-items: start;
+  }
+
+  .secao-hero {
+    padding: 0 var(--espaco-xl);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   12. RESPONSIVIDADE — DESKTOP GRANDE (≥ 1024px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1024px) {
+  .hero-grade {
+    grid-template-columns: 1fr 516px;
+    gap: var(--espaco-4xl);
+  }
+
+  /* Formulário sticky sem scroll interno, próximo à navbar */
+  .hero-coluna-direita {
+    position: sticky;
+    top: calc(var(--altura-navbar) + var(--espaco-sm));
+    overflow-y: visible;
+    max-height: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   13. RESPONSIVIDADE — DESKTOP XL (≥ 1280px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1280px) {
+  .secao-hero {
+    padding: 0 var(--espaco-xl);
+  }
+}

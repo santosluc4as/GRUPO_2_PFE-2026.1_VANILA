@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Página de contato institucional da ACB Brasil." />
+  <title>Contato | ACB Brasil</title>
+
+    <!-- Fontes principais -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="../CSS/global.css">
+  <link rel="stylesheet" href="../CSS/contato.css" />
+  <script src="../JS/Contato.js" defer></script>
+</head>
+<body>
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+  <header class="cabecalho" id="cabecalho">
+    <nav class="navegacao" role="navigation" aria-label="Menu principal">
+
+      <!-- Logo -->
+      <a href="../index.html" class="logo" aria-label="ACB - Página inicial">
+        <img src="../images/logo.png" alt="ACB - Associação de Conselheiros do Brasil" class="logo-imagem">
+      </a>
+
+      <!-- Links de navegação (desktop) -->
+      <ul class="menu-lista" role="list">
+        <li class="menu-item"><a href="../index.html" class="menu-link">Início</a></li>
+        <li class="menu-item"><a href="sobre.html" class="menu-link">Sobre nós</a></li>
+        <li class="menu-item"><a href="insights.html" class="menu-link">Insights</a></li>
+        <li class="menu-item"><a href="newsletter.html" class="menu-link">Notícias</a></li>
+        <li class="menu-item"><a href="contato.html" class="menu-link menu-link--ativo">Contato</a></li>
+      </ul>
+
+      <!-- Ações da navbar -->
+      <div class="navbar-acoes">
+        <button class="btn-busca" id="btnBusca" aria-label="Abrir busca">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <a href="associe-se.html" class="btn-area-associados">Área de Associados</a>
+        <button class="btn-menu-mobile" id="btnMenuMobile" aria-label="Abrir menu" aria-expanded="false">
+          <span class="hamburguer-linha"></span>
+          <span class="hamburguer-linha"></span>
+          <span class="hamburguer-linha"></span>
+        </button>
+      </div>
+
+    </nav>
+
+    <!-- Menu Mobile -->
+    <div class="menu-mobile" id="menuMobile" aria-hidden="true">
+      <ul class="menu-mobile-lista" role="list">
+        <li><a href="../index.html" class="menu-mobile-link">Início</a></li>
+        <li><a href="sobre.html" class="menu-mobile-link">Sobre nós</a></li>
+        <li><a href="insights.html" class="menu-mobile-link">Insights</a></li>
+        <li><a href="newsletter.html" class="menu-mobile-link">Notícias</a></li>
+        <li><a href="contato.html" class="menu-mobile-link">Contato</a></li>
+        <li><a href="associe-se.html" class="menu-mobile-link menu-mobile-link--destaque">Área de Associados</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="conteudo-principal">
+    <section class="hero-contato" aria-labelledby="titulo-contato">
+      <div class="hero-contato__box">
+          <div class="hero-contato_decoracao_amarela" aria-hidden="true"></div>
+          <div class="hero-contato__decoracao_base" aria-hidden="true"></div>
+        <div class="hero-contato__container">
+          <p class="hero-contato__kicker">ATENDIMENTO INSTITUCIONAL</p>
+          <h1 id="titulo-contato" class="hero-contato__titulo">Entre em Contato</h1>
+          <p class="hero-contato__descricao">
+            Lorem ipsum dolor sit amet consectetur. Laoreet urna sodales consequat
+            cursus massa tristique amet. Nibh non ornare.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contato-conteudo" aria-label="Informações de contato e formulário">
+      <div class="contato-conteudo__container">
+        <div class="contato-conteudo__info">
+          <section class="info-contato" aria-labelledby="titulo-endereco">
+            <h2 id="titulo-endereco" class="info-contato__titulo">ENDEREÇO SEDE</h2>
+            <address class="info-contato__texto">
+              <p><span class="info-contato__icone" aria-hidden="true">⌂</span> Av. das Américas, 1000</p>
+              <p>Centro, Rio de Janeiro — RJ</p>
+              <p>CEP 0419-001</p>
+            </address>
+          </section>
+
+          <section class="info-contato" aria-labelledby="titulo-canais">
+            <h2 id="titulo-canais" class="info-contato__titulo">CANAIS DIRETOS</h2>
+            <div class="info-contato__texto">
+              <p><a href="tel:+552110000000"><span class="info-contato__icone" aria-hidden="true">✆</span> +55 (21) 1000-0000</a></p>
+              <p><a href="mailto:contato@acbrasil.org"><span class="info-contato__icone" aria-hidden="true">✉</span> contato@acbrasil.org</a></p>
+            </div>
+          </section>
+
+          <section class="mapa-contato" aria-labelledby="titulo-mapa">
+            <h2 id="titulo-mapa" class="sr-only">Mapa da localização</h2>
+
+            <div class="mapa-contato__janela">
+              <p class="mapa-contato__frase">Nos visite!</p>
+              <a
+                href="https://www.google.com/maps"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mapa-contato__botao"
+              >
+                Abrir no Google Maps
+              </a>
+            </div>
+          </section>
+        </div>
+
+        <section class="formulario-contato-box" aria-labelledby="titulo-formulario">
+          <h2 id="titulo-formulario" class="sr-only">Formulário de contato</h2>
+
+          <form id="formulario-contato" class="formulario-contato" novalidate>
+            <div class="formulario-contato__campo">
+              <label for="nome">NOME COMPLETO</label>
+              <input
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Ex: Dr. Juan Lucas"
+                autocomplete="name"
+                required
+                aria-describedby="erro-nome"
+              />
+              <span id="erro-nome" class="mensagem-erro" aria-live="polite"></span>
+            </div>
+
+            <div class="formulario-contato__campo">
+              <label for="email">E-MAIL</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="exemplo@email.com"
+                autocomplete="email"
+                required
+                aria-describedby="erro-email"
+              />
+              <span id="erro-email" class="mensagem-erro" aria-live="polite"></span>
+            </div>
+
+            <div class="formulario-contato__campo">
+              <label for="assunto">ASSUNTO</label>
+              <select
+                id="assunto"
+                name="assunto"
+                required
+                aria-describedby="erro-assunto"
+              >
+                <option value="">Selecione um assunto</option>
+                <option value="afiliacao" selected>Afiliação Institucional</option>
+                <option value="duvida">Dúvida Geral</option>
+                <option value="eventos">Eventos</option>
+                <option value="imprensa">Imprensa</option>
+                <option value="outro">Outro</option>
+              </select>
+              <span id="erro-assunto" class="mensagem-erro" aria-live="polite"></span>
+            </div>
+
+            <div class="formulario-contato__campo">
+              <label for="mensagem">MENSAGEM</label>
+              <textarea
+                id="mensagem"
+                name="mensagem"
+                rows="6"
+                placeholder="Descreva sua solicitação com detalhes..."
+                required
+                aria-describedby="erro-mensagem"
+              ></textarea>
+              <span id="erro-mensagem" class="mensagem-erro" aria-live="polite"></span>
+            </div>
+
+            <button type="submit" class="formulario-contato__enviar">
+              Enviar Protocolo
+              <span aria-hidden="true">▷</span>
+            </button>
+
+            <p class="formulario-contato__texto-legal">
+              AO ENVIAR, VOCÊ CONCORDA COM NOSSOS TERMOS DE GOVERNANÇA E PRIVACIDADE.
+            </p>
+
+            <p id="mensagem-sucesso" class="mensagem-sucesso" aria-live="polite"></p>
+          </form>
+        </section>
+      </div>
+    </section>
+
+    <section class="apoio-imediato" aria-labelledby="titulo-apoio">
+      <div class="apoio-imediato__container">
+        <header class="apoio-imediato__header">
+          <h2 id="titulo-apoio" class="apoio-imediato__titulo">Canais de Apoio Imediato</h2>
+          <span class="apoio-imediato__linha" aria-hidden="true"></span>
+        </header>
+
+        <div class="apoio-imediato__cards">
+          <article class="card-apoio">
+            <div class="card-apoio__icone" aria-hidden="true">◔</div>
+            <h3 class="card-apoio__titulo">WhatsApp</h3>
+            <p class="card-apoio__texto">
+              Atendimento ágil para associados e dúvidas rápidas sobre eventos.
+            </p>
+            <a href="#" class="card-apoio__link">Iniciar Conversa →</a>
+          </article>
+
+          <article class="card-apoio">
+            <div class="card-apoio__icone" aria-hidden="true">✦</div>
+            <h3 class="card-apoio__titulo">Redes Sociais</h3>
+            <p class="card-apoio__texto">
+              Acompanhe nossas publicações e artigos técnicos no LinkedIn.
+            </p>
+            <a href="#" class="card-apoio__link">Ver Perfil →</a>
+          </article>
+
+          <article class="card-apoio">
+            <div class="card-apoio__icone" aria-hidden="true">?</div>
+            <h3 class="card-apoio__titulo">Central de Ajuda</h3>
+            <p class="card-apoio__texto">
+              Respostas imediatas para as perguntas mais frequentes da comunidade.
+            </p>
+            <a href="./faq.html" class="card-apoio__link">Acessar FAQ →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape-contato" aria-label="Rodapé institucional">
+    <div class="rodape-contato__container">
+      <section class="rodape-contato__marca" aria-label="Marca e redes sociais">
+        <a href="../index.html" aria-label="Voltar para a página inicial">
+          <img
+            src="../images/logo-acb-fundo-transparente.png"
+            alt="Logo da ACB Brasil"
+            class="rodape-contato__logo"
+          />
+        </a>
+
+        <p class="rodape-contato__descricao">
+          Lorem ipsum dolor sit amet consectetur.
+          Senectus ultrices faucibus consequat neque
+        </p>
+
+        <ul class="rodape-contato__redes" aria-label="Redes sociais">
+          <li><a href="#" aria-label="Compartilhar">↗</a></li>
+          <li><a href="#" aria-label="Rede social 1">◉</a></li>
+          <li><a href="#" aria-label="LinkedIn">in</a></li>
+          <li><a href="#" aria-label="YouTube">▶</a></li>
+          <li><a href="#" aria-label="Rede social 2">◎</a></li>
+          <li><a href="#" aria-label="WhatsApp">◌</a></li>
+        </ul>
+      </section>
+
+      <nav class="rodape-contato__coluna" aria-label="Navegação do rodapé">
+        <h2>NAVEGAÇÃO</h2>
+        <ul>
+          <li><a href="./newsletter.html">Notícias</a></li>
+          <li><a href="./contato.html">Contato</a></li>
+          <li><a href="./insights.html">Insights</a></li>
+          <li><a href="./sobre.html">Sobre nós</a></li>
+        </ul>
+      </nav>
+
+      <nav class="rodape-contato__coluna" aria-label="Área dos associados">
+        <h2>ASSOCIADOS</h2>
+        <ul>
+          <li><a href="./associe-se.html">Torne-se Membro</a></li>
+          <li><a href="./login.html">Portal Privado</a></li>
+          <li><a href="#">Benefícios</a></li>
+        </ul>
+      </nav>
+
+      <section class="rodape-contato__coluna" aria-label="Suporte institucional">
+        <h2>Suporte Institucional</h2>
+        <address>
+          <p><a href="mailto:contato@acbrasil.org">✉ contato@acbrasil.org</a></p>
+          <p><a href="tel:+552110000000">✆ +55 (21) 1000-0000</a></p>
+          <p>⌂ Av. das Américas, 1000 - RJ</p>
+        </address>
+      </section>
+    </div>
+
+    <div class="rodape-contato__base">
+      <p>© 2026 JUAN LUCAS. TODOS OS DIREITOS RESERVADOS.</p>
+
+      <div class="rodape-contato__links">
+        <a href="#">POLÍTICA DE COOKIES</a>
+        <a href="#">POLÍTICA DE PRIVACIDADE</a>
+      </div>
+    </div>
+  </footer>
+    <script src="../JS/global.js"></script>
+</body>
+</html>
