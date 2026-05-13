@@ -1,0 +1,113 @@
+body {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 150vh;
+}
+
+header {
+    height: min-content;
+}
+
+main {
+    flex: 1;
+    margin-top: var(--altura-navbar);
+}
+
+section {
+    margin-inline: var(--espaco-xl);
+    box-shadow: var(--sombra-lg);
+}
+
+
+/* =========================
+   HERO
+========================= */
+.hero {
+  padding: var(--espaco-xl);
+}
+
+.hero_box {
+  position: relative;
+  min-height: 248px;
+  background: var(--cor-branco);
+  box-shadow: var(--sombra-sm);
+  overflow: hidden;
+  border-bottom: 2px solid rgba(26, 40, 86, 0.06);
+  margin-top: 6%;
+}
+
+.hero_decoracao_amarela {
+  position:absolute;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100%;
+  background: var(--cor-dourado);
+  z-index: 0;
+}
+
+.hero_decoracao_base{
+position: absolute;
+  min-height: 248px;
+  background: var(--cor-branco);
+  width: 100%;
+  height: 100%;
+  border-top-left-radius:250px;
+  z-index: 1;
+}
+
+
+.hero_container {
+  position: relative;
+  z-index: 1;
+  padding: 56px 48px 42px 62px;
+  margin-left: 40px;
+}
+
+.hero_kicker {
+  margin: 0 0 10px;
+  color: var(--cor-dourado);
+  font-size: var(--texto-xs);
+  font-weight: 700;
+  letter-spacing: 0.11em;
+}
+
+.hero_titulo {
+  margin: 0 0 14px;
+  font-family: var(--fonte-titulo);
+  font-size: 3.55rem;
+  line-height: 1;
+  color: var(--cor-azul-escuro);
+}
+
+.hero_descricao {
+  max-width: 610px;
+  margin: 0;
+  color: var(--cor-cinza-texto);
+  font-size: var(--texto-sm);
+  line-height: 1.7;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+@media (max-width: 980px) {
+  
+}
+
+@media (max-width: 760px) {
+  .hero_container {
+    padding: 56px 48px 42px 62px;
+  }
+
+  .hero_titulo {
+    font-size: 2.4rem;
+  }
+
+  .hero_decoracao {
+    width: 180px;
+    height: 94px;
+  }
+}
