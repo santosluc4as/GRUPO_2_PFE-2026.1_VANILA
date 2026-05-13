@@ -170,6 +170,11 @@ position: absolute;
   line-height: 1.6;
 }
 
+/* Ajuste de alinhamento do Endereço */
+ address.info-contato__texto{
+  display:flex;
+}
+
 .info-contato__texto p {
   margin: 0 0 4px;
 }
