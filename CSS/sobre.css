@@ -395,16 +395,20 @@
 .quote-avatar {
   width: 150px;
   height: 150px;
-  border-radius: var(--raio-md);
+  border-radius: 50%;
   overflow: hidden;
   box-shadow: var(--sombra-md);
   background-color: var(--cor-cinza-medio);
+  border: 4px solid var(--cor-branco);
+  flex-shrink: 0;
 }
 
 .quote-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
+  background-color: var(--cor-cinza-medio);
 }
 
 .quote-content {
