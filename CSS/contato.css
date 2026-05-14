@@ -23,18 +23,6 @@
   top: 10px;
 }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  white-space: nowrap;
-  clip-path: inset(50%);
-}
-
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
