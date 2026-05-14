@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Página de contato institucional da ACB Brasil." />
-  <title>Contato | ACB Brasil</title>
+  <title>Contato | ACB Brasil - Associação de Conselheiros do Brasil</title>
+  <link rel="icon" href="../images/favicon.ico" type="logo">
 
     <!-- Fontes principais -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,6 +26,26 @@
 <body>
   <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
 
+    <!-- ===== BARRA DE BUSCA GLOBAL ===== -->
+  <div class="busca-overlay" id="buscaOverlay" role="dialog" aria-label="Busca no site" aria-hidden="true">
+    <div class="busca-container">
+      <div class="busca-cabecalho">
+        <span class="busca-titulo">O que você procura?</span>
+        <button class="busca-fechar" id="buscaFechar" aria-label="Fechar busca">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="busca-campo-wrapper">
+        <i class="fa-solid fa-magnifying-glass busca-icone"></i>
+        <input type="text" id="buscaInput" class="busca-campo" placeholder="Buscar páginas, conteúdos, associados..."
+          autocomplete="off" />
+      </div>
+      <div class="busca-resultados" id="buscaResultados">
+        <p class="busca-dica">Digite para buscar páginas e conteúdos do site.</p>
+      </div>
+    </div>
+  </div>
+
   <!-- Header -->
   <header id="cabecalho" class="cabecalho">
     <nav class="navegacao">
@@ -44,7 +65,7 @@
         <button id="btnBusca" class="btn-busca" aria-label="Abrir busca">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
-        <a href="#" class="btn-area-associados">Área de Associados</a>
+        <a href="associe-se.html" class="btn-area-associados">Área de Associados</a>
         <button id="btnMenuMobile" class="btn-menu-mobile" aria-label="Menu mobile" aria-expanded="false">
           <span class="hamburguer-linha"></span>
           <span class="hamburguer-linha"></span>
@@ -67,7 +88,7 @@
   </header>
 
   <main id="conteudo-principal">
-    <section class="hero-contato" aria-labelledby="titulo-contato">
+    <section class="hero-contato animacao-entrada" data-delay="1" aria-labelledby="titulo-contato">
       <div class="hero-contato__box">
           <div class="hero-contato_decoracao_amarela" aria-hidden="true"></div>
           <div class="hero-contato__decoracao_base" aria-hidden="true"></div>
@@ -84,7 +105,7 @@
 
     <section class="contato-conteudo" aria-label="Informações de contato e formulário">
       <div class="contato-conteudo__container">
-        <div class="contato-conteudo__info">
+        <div class="contato-conteudo__info animacao-entrada" data-delay="2">
 
           <section class="info-contato" aria-labelledby="titulo-endereco">
             <h2 id="titulo-endereco" class="info-contato__titulo">ENDEREÇO SEDE</h2>
@@ -123,7 +144,7 @@
           </section>
         </div>
 
-        <section class="formulario-contato-box" aria-labelledby="titulo-formulario">
+        <section class="formulario-contato-box animacao-entrada" data-delay="1" aria-labelledby="titulo-formulario">
           <h2 id="titulo-formulario" class="sr-only">Formulário de contato</h2>
 
           <form id="formulario-contato" class="formulario-contato" novalidate>
@@ -201,7 +222,7 @@
       </div>
     </section>
 
-    <section class="apoio-imediato" aria-labelledby="titulo-apoio">
+    <section class="apoio-imediato animacao-entrada" data-delay="1" aria-labelledby="titulo-apoio">
       <div class="apoio-imediato__container">
         <header class="apoio-imediato__header">
           <h2 id="titulo-apoio" class="apoio-imediato__titulo">Canais de Apoio Imediato</h2>
@@ -252,7 +273,7 @@
             class="logo-imagem logo-imagem--rodape" />
         </a>
         <p class="rodape-descricao">
-          A Associação de Conselheiros do Brasil (ACB) é uma entidade dedicada ao fortalecimento da governança corporativa no país.
+          Transformando a governança em crescimento, confiança e futuro para as empresas brasileiras desde 2022.
         </p>
         <div class="rodape-redes-sociais">
           <a href="#" class="rede-social-link" aria-label="Compartilhar">
