@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   let currentQuoteIndex = 0;
   let autoPlayInterval;
-  const AUTO_PLAY_TIME = 10000; // 7 segundos para leitura confortável
+  const AUTO_PLAY_TIME = 10000; // 10 segundos para a troca do carrossel
 
   const updateCarousel = (index) => {
     currentQuoteIndex = index;
