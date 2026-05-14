@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
+<!-- =====================================================
+     CONFIGURAÇÕES BÁSICAS DA PÁGINA
+     - Metadados
+     - Título da aba
+     - Ícone do site
+===================================================== -->
+
 <head>
+  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Página de contato institucional da ACB Brasil." />
+
   <title>Contato | ACB Brasil - Associação de Conselheiros do Brasil</title>
+  
   <link rel="icon" href="../images/favicon.ico" type="logo">
 
-    <!-- Fontes principais -->
+  <!-- Fontes principais -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -15,15 +26,17 @@
   <!-- Font Awesome para ícones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <!-- Css -->
+  <!-- Estilos -->
   <link rel="stylesheet" href="../CSS/global.css">
   <link rel="stylesheet" href="../CSS/contato.css" />
   
-  <!-- JavaScript -->
+  <!-- Scripts -->
   <script src="../JS/Contato.js" defer></script>
   <script src="../JS/global.js" defer></script>
 </head>
 <body>
+
+  <!-- Link de acessibilidade: permite que usuários de teclado ou leitores de tela pulem diretamente para o conteúdo principal -->
   <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
 
     <!-- ===== BARRA DE BUSCA GLOBAL ===== -->
@@ -46,8 +59,9 @@
     </div>
   </div>
 
-  <!-- Header -->
+  <!-- Header Global -->
   <header id="cabecalho" class="cabecalho">
+
     <nav class="navegacao">
       <a href="../index.html" class="logo" aria-label="Home ACB Brasil">
         <img src="../images/logo.png" alt="ACB Brasil" class="logo-imagem">
@@ -74,7 +88,7 @@
       </div>
     </nav>
     
-    <!-- Menu Mobile -->
+    <!-- Menu Mobile Global -->
     <div id="menuMobile" class="menu-mobile" aria-hidden="true">
       <ul class="menu-mobile-lista">
             <li><a href="../index.html" class="menu-mobile-link">Início</a></li>
@@ -85,8 +99,10 @@
             <li><a href="associe-se.html" class="menu-mobile-link menu-mobile-link--destaque">Área de Associados</a></li>
           </ul>
     </div>
+
   </header>
 
+  <!-- Hero -->
   <main id="conteudo-principal">
     <section class="hero-contato animacao-entrada" data-delay="1" aria-labelledby="titulo-contato">
       <div class="hero-contato__box">
@@ -94,6 +110,7 @@
           <div class="hero-contato__decoracao_base" aria-hidden="true"></div>
         <div class="hero-contato__container">
           <p class="hero-contato__kicker">ATENDIMENTO INSTITUCIONAL</p>
+          <!-- Título h1 dentro do Hero -->
           <h1 id="titulo-contato" class="hero-contato__titulo">Entre em Contato</h1>
           <p class="hero-contato__descricao">
             Preencha o formulário e nos envie uma solicitação! 
@@ -103,10 +120,14 @@
       </div>
     </section>
 
+    <!-- Conteúdo principal, dividido em 2 colunas na visualização de desktop -->
     <section class="contato-conteudo" aria-label="Informações de contato e formulário">
       <div class="contato-conteudo__container">
-        <div class="contato-conteudo__info animacao-entrada" data-delay="2">
 
+        <!-- Esquerda: Informações de contato -->
+        <div class="contato-conteudo__info animacao-entrada" data-delay="2">
+          
+          <!-- Seção de Endereço da Sede -->
           <section class="info-contato" aria-labelledby="titulo-endereco">
             <h2 id="titulo-endereco" class="info-contato__titulo">ENDEREÇO SEDE</h2>
             <address class="info-contato__texto">
@@ -119,6 +140,7 @@
             </address>
           </section>
 
+          <!-- Seção de Canais para contato direto -->
           <section class="info-contato" aria-labelledby="titulo-canais">
             <h2 id="titulo-canais" class="info-contato__titulo">CANAIS DIRETOS</h2>
             <div class="info-contato__texto">
@@ -127,26 +149,25 @@
             </div>
           </section>
 
+          <!-- Seção com um hiperlink para o Google Maps -->
           <section class="mapa-contato" aria-labelledby="titulo-mapa">
             <h2 id="titulo-mapa" class="sr-only">Mapa da localização</h2>
 
             <div class="mapa-contato__janela">
               <p class="mapa-contato__frase">Nos visite!</p>
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=Av.+das+Am%C3%A9ricas,+1000,+Rio+de+Janeiro,+RJ"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="mapa-contato__botao"
-              >
+              <a href="https://www.google.com/maps/search/?api=1&query=Av.+das+Am%C3%A9ricas,+1000,+Rio+de+Janeiro,+RJ"
+                target="_blank" rel="noopener noreferrer" class="mapa-contato__botao">
                 Abrir no Google Maps
               </a>
             </div>
           </section>
         </div>
 
+        <!-- Section do Formulário -->
         <section class="formulario-contato-box animacao-entrada" data-delay="1" aria-labelledby="titulo-formulario">
           <h2 id="titulo-formulario" class="sr-only">Formulário de contato</h2>
 
+          <!-- Formulário, é validado pelo contato.js -->
           <form id="formulario-contato" class="formulario-contato" novalidate>
             <div class="formulario-contato__campo">
               <label for="nome">NOME COMPLETO</label>
@@ -222,6 +243,7 @@
       </div>
     </section>
 
+    <!-- Seção de Apoio Imediato -->
     <section class="apoio-imediato animacao-entrada" data-delay="1" aria-labelledby="titulo-apoio">
       <div class="apoio-imediato__container">
         <header class="apoio-imediato__header">
@@ -261,7 +283,7 @@
     </section>
   </main>
 
-  <!-- ===== RODAPÉ ===== -->
+  <!-- ===== RODAPÉ GLOBAL ===== -->
   <footer class="rodape">
 
     <div class="rodape-principal">

@@ -139,6 +139,7 @@ position: absolute;
   display: flex;
   flex-direction: column;
   gap: 22px;
+  margin-left:25px;
 }
 
 .info-contato {
