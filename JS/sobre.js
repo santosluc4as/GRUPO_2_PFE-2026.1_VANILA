@@ -2,17 +2,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // Dados do Carrossel
   const partnerQuotes = [
     {
-      name: "DR. ALEXANDRE REIS",
+      name: "ALEXANDRE REIS",
       quote: "A preservação da verdade institucional não é apenas um serviço, é um dever cívico que assumimos com o mais alto rigor técnico.",
       img: "../images/conselheiros/alexandre-reis.jpg"
     },
     {
-      name: "DR. AMÉRICO OLIVEIRA",
+      name: "AMÉRICO OLIVEIRA",
       quote: "Nossa missão é transformar a governança corporativa em um pilar de sustentabilidade e crescimento para as empresas brasileiras.",
       img: "../images/conselheiros/americo-oliveira.png"
     },
     {
-      name: "DR. ANTONIO ALMEIDA",
+      name: "ANTONIO ALMEIDA",
       quote: "A ética e a transparência são os alicerces sobre os quais construímos o futuro das organizações que servimos.",
       img: "../images/conselheiros/antonio-almeida.png"
     }
