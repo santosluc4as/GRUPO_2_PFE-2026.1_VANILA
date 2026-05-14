@@ -14,25 +14,9 @@
 /* --------------------------------------------------------------------------
    1.1 LOGO DECORATION (SPECIFIC)
    -------------------------------------------------------------------------- */
-.logo-imagem {
-  height: 80px;
-  width: auto;
-  display: block;
-  object-fit: contain;
-}
 
-.logo-imagem--rodape {
-  height: 60px;
-  width: auto;
-  opacity: 0.9;
-  transition: opacity var(--transicao-rapida);
-  object-fit: contain;
-  filter: none !important;
-}
 
-.logo-imagem--rodape:hover {
-  opacity: 1;
-}
+
 
 /* --------------------------------------------------------------------------
    1.2 SKELETON LOADERS
@@ -45,8 +29,13 @@
 }
 
 @keyframes skeleton-loading {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
 }
 
 .skeleton-card {
@@ -122,7 +111,7 @@
 .hero-decoracao {
   width: 240px;
   height: 4px;
-  background: var(--cor-dourado-claro);
+  background: var(--cor-dourado);
   margin-bottom: var(--espaco-xl);
 }
 
@@ -138,7 +127,7 @@
     grid-template-columns: 1.5fr 1fr;
     gap: var(--espaco-4xl);
   }
-  
+
   .hero-texto-intro {
     padding-top: var(--espaco-xl);
   }
@@ -158,6 +147,7 @@
   border-radius: var(--raio-lg);
   overflow: hidden;
   box-shadow: var(--sombra-lg);
+  border: 1px solid var(--cor-borda);
 }
 
 .featured-imagem-wrapper {
@@ -240,6 +230,7 @@
   .featured-grid {
     grid-template-columns: 1fr 1fr;
   }
+
   .featured-imagem-wrapper {
     height: auto;
   }
@@ -249,7 +240,7 @@
    4. FILTROS & BUSCA
    -------------------------------------------------------------------------- */
 .secao-filtros {
-  padding: var(--espaco-xl) 0;
+  padding: var(--espaco-3xl) 0 var(--espaco-xl);
   border-bottom: 1px solid var(--cor-borda);
   background: #fdfdfe;
 }
@@ -324,30 +315,37 @@
 
 .busca-arquivo {
   width: 100%;
-  max-width: 300px;
+  max-width: 600px;
 }
 
 .busca-arquivo-campo {
   position: relative;
 }
 
-.busca-arquivo-campo i {
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 12px;
-  color: var(--cor-cinza-texto);
-}
-
 .busca-arquivo-campo input {
   width: 100%;
-  padding: 10px 12px 10px 32px;
-  border: none;
+  padding: 14px 16px 14px 40px;
+  border: 1px solid var(--cor-borda);
   background: var(--cor-cinza-claro);
-  font-size: 11px;
-  border-radius: 2px;
+  font-size: 14px;
+  border-radius: var(--raio-sm);
   outline: none;
+  transition: all var(--transicao-rapida);
+}
+
+.busca-arquivo-campo input:focus {
+  background: var(--cor-branco);
+  border-color: var(--cor-dourado);
+  box-shadow: 0 0 0 4px rgba(200, 151, 42, 0.1);
+}
+
+.busca-arquivo-campo i {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: var(--cor-cinza-texto);
 }
 
 @media (min-width: 1024px) {
@@ -374,11 +372,17 @@
 .card-insight {
   display: flex;
   flex-direction: column;
-  transition: transform var(--transicao-media);
+  padding: var(--espaco-lg);
+  background: var(--cor-branco);
+  border-radius: var(--raio-md);
+  border: 1px solid var(--cor-borda);
+  transition: all var(--transicao-media);
 }
 
 .card-insight:hover {
   transform: translateY(-8px);
+  border-color: var(--cor-dourado);
+  box-shadow: var(--sombra-md);
 }
 
 .card-imagem-wrapper {
@@ -424,6 +428,7 @@
   margin-bottom: var(--espaco-md);
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -445,25 +450,6 @@
 @media (min-width: 1024px) {
   .grid-insights {
     grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .card-insight--wide {
-    grid-column: span 2;
-  }
-  
-  .card-insight--wide .card-grid-custom {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--espaco-xl);
-  }
-  
-  .card-insight--wide .card-imagem-wrapper {
-    margin-bottom: 0;
-    height: 100%;
-  }
-  
-  .card-insight--wide .card-titulo {
-    font-size: var(--texto-xl);
   }
 }
 
@@ -499,12 +485,13 @@
 .container--newsletter {
   position: relative;
   z-index: 1;
-  max-width: 800px;
+  max-width: 850px;
 }
 
 /* Ícone de livro grande no fundo da newsletter */
 .container--newsletter::after {
-  content: '\f5db'; /* fa-book-open */
+  content: '\f5db';
+  /* fa-book-open */
   font-family: 'Font Awesome 6 Free';
   font-weight: 900;
   position: absolute;
@@ -522,6 +509,7 @@
   font-size: var(--texto-3xl);
   margin-bottom: var(--espaco-md);
   font-style: italic;
+  color: var(--cor-branco);
 }
 
 .newsletter-subtitulo {
@@ -529,6 +517,7 @@
   opacity: 0.8;
   max-width: 600px;
   margin: 0 auto var(--espaco-2xl);
+  color: var(--cor-branco);
 }
 
 .newsletter-form {
@@ -536,27 +525,37 @@
   flex-direction: column;
   gap: var(--espaco-sm);
   margin-bottom: var(--espaco-md);
+  align-items: stretch;
 }
 
 .newsletter-input {
   flex: 1;
-  padding: var(--espaco-md) var(--espaco-lg);
-  border: none;
+  height: 48px;
+  padding: 0 var(--espaco-lg);
+  border: 1px solid transparent;
   background: var(--cor-branco);
   color: var(--cor-texto-escuro);
   font-size: var(--texto-sm);
   border-radius: 2px;
+  outline: none;
+  box-sizing: border-box;
 }
 
 .newsletter-btn {
-  padding: var(--espaco-md) var(--espaco-2xl);
+  padding: 0 var(--espaco-2xl);
+  height: 48px;
   background: var(--cor-azul-medio);
   color: var(--cor-branco);
   font-weight: 700;
   font-size: var(--texto-xs);
   letter-spacing: 1px;
   border-radius: 2px;
+  border: none;
+  cursor: pointer;
   transition: background var(--transicao-media);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .newsletter-btn:hover {

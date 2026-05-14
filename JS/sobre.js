@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Carousel Data
+  // Dados do Carrossel
   const partnerQuotes = [
     {
       name: "DR. ALEXANDRE REIS",
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (quoteText) quoteText.textContent = `"${data.quote}"`;
     if (quoteAuthorName) quoteAuthorName.textContent = data.name;
 
-    // Sincronizar dots
+    // Sincronizar indicadores (dots)
     dots.forEach((dot, i) => {
       dot.classList.toggle('active', i === index);
     });
@@ -83,26 +83,12 @@ document.addEventListener('DOMContentLoaded', () => {
     quoteCard.style.transition = 'opacity 0.3s ease';
   }
 
-  // Back to top button visibility
-  const backToTopBtn = document.querySelector('.back-to-top');
-  
-  if (backToTopBtn) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        backToTopBtn.style.opacity = '1';
-        backToTopBtn.style.visibility = 'visible';
-      } else {
-        backToTopBtn.style.opacity = '0';
-        backToTopBtn.style.visibility = 'hidden';
-      }
-    });
-
-    // Initial state
+    // Estado inicial
     backToTopBtn.style.opacity = '0';
     backToTopBtn.style.visibility = 'hidden';
     backToTopBtn.style.transition = 'opacity 0.3s ease, visibility 0.3s ease';
   }
-});
+);
 
 const founders = [
   { nome: "ALEXANDRE REIS", img: "../images/conselheiros/alexandre-reis.jpg" },

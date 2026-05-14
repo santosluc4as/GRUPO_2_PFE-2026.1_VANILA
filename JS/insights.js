@@ -79,8 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (gridArtigos) {
       gridArtigos.innerHTML = artigosParaGrid.map((artigo, index) => `
-        <article class="card-insight animacao-entrada visivel ${index === 3 ? 'card-insight--wide' : ''}" data-categoria="${artigo.categoria}">
-          ${index === 3 ? `<div class="card-grid-custom">` : ''}
+        <article class="card-insight animacao-entrada visivel" data-categoria="${artigo.categoria}">
           <div class="card-imagem-wrapper">
             <img src="${artigo.imagem}" alt="${artigo.titulo}" class="card-imagem">
           </div>
@@ -90,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
             <p class="card-snippet">${artigo.resumo}</p>
             <span class="card-data">${artigo.data}</span>
           </div>
-          ${index === 3 ? `</div>` : ''}
         </article>
       `).join('');
     }

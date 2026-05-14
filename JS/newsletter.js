@@ -219,6 +219,11 @@ function renderArchiveGrid(posts) {
       card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
       card.style.opacity = '1';
       card.style.transform = 'translateY(0)';
+      
+      // Remove o transform inline após a animação para não conflitar com o hover do CSS
+      setTimeout(() => {
+        card.style.transform = '';
+      }, 500);
     }, i * 80);
   });
 }

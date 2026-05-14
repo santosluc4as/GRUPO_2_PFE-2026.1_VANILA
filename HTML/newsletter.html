@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Newsletter ACBrasil - Mantenha-se informado sobre as últimas tendências e novidades do mundo corporativo." />
-  <title>Notícias | ACBrasil</title>
+  <title>Notícias | ACBrasil - Associação de Conselheiros do Brasil</title>
+  <link rel="icon" href="../images/favicon.ico" type="logo">
 
   <!-- Fontes principais -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,9 +23,6 @@
 </head>
 
 <body>
-
-  <!-- ===== BARRA DE PROGRESSO DE SCROLL ===== -->
-  <div class="barra-progresso-scroll" id="barraProgressoScroll"></div>
 
   <!-- ===== BARRA DE BUSCA GLOBAL ===== -->
   <div class="busca-overlay" id="buscaOverlay" role="dialog" aria-label="Busca no site" aria-hidden="true">
@@ -99,8 +96,44 @@
     <!-- HERO -->
     <section class="hero" id="hero">
       <div class="hero__container">
-        <h1 class="hero__title">Notícias <span class="hero__title--highlight">ACBrasil</span></h1>
-        <p class="hero__subtitle">Mantenha-se informado sobre as últimas tendências e novidades do mundo corporativo.</p>
+        <div class="hero__grid">
+          <div class="hero__left animacao-entrada" data-delay="1">
+            <span class="hero__tag">INFORMATIVO INSTITUCIONAL</span>
+            <h1 class="hero__title">Notícias <br><span class="hero__title--highlight">ACBrasil</span></h1>
+            <div class="hero__title-bar"></div>
+          </div>
+          <div class="hero__right animacao-entrada" data-delay="2">
+            <p class="hero__subtitle">Acompanhe análises exclusivas, relatórios institucionais e o panorama atual da
+              governança corporativa no Brasil, com curadoria direta de nossos conselheiros.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER SUBSCRIBE (DESIGN CARD) -->
+    <section class="newsletter-subscribe" id="newsletter-subscribe">
+      <div class="newsletter-subscribe__container">
+        <div class="newsletter-subscribe__card animacao-entrada" data-delay="1">
+          <div class="newsletter-subscribe__content">
+            <h2 class="newsletter-subscribe__title">Receba notícias da ACB em sua <br> caixa de entrada.</h2>
+            <p class="newsletter-subscribe__subtitle">Fique por dentro das tendências, artigos e eventos exclusivos para
+              associados e conselheiros.</p>
+
+            <form class="newsletter-subscribe__form" id="subscribeForm">
+              <div class="newsletter-subscribe__field">
+                <label for="emailInput" class="newsletter-subscribe__label">ENDEREÇO DE E-MAIL</label>
+                <input type="email" class="newsletter-subscribe__input" id="emailInput" placeholder="nome@exemplo.com"
+                  required>
+              </div>
+              <button type="submit" class="newsletter-subscribe__btn" id="subscribeBtn">
+                INSCREVER-SE NA LISTA DE TRANSMISSÃO <i class="fas fa-arrow-right"></i>
+              </button>
+            </form>
+            <p class="newsletter-subscribe__disclaimer">Ao se inscrever, você concorda com nossa Política de
+              Privacidade.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -130,7 +163,12 @@
             </div>
             <div class="archive__search">
               <input type="text" class="archive__search-input" id="searchInput" placeholder="Buscar no arquivo...">
-              <svg class="archive__search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <svg class="archive__search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
             </div>
           </div>
         </div>
@@ -145,27 +183,6 @@
       </div>
     </section>
 
-    <!-- INSCRIÇÃO NA NEWSLETTER -->
-    <section class="newsletter-subscribe" id="newsletter-subscribe">
-      <div class="newsletter-subscribe__container">
-        <div class="newsletter-subscribe__content">
-          <h2 class="newsletter-subscribe__title">Receba notícias da ACB em sua<br>caixa de entrada.</h2>
-          <p class="newsletter-subscribe__subtitle">Lorem ipsum dolor sit amet consectetur. Sodales integer lorem viverra ultrices gravida est. Porttitor in eget suspendisse diam iaculis facilisis.</p>
-
-          <form class="newsletter-subscribe__form" id="subscribeForm">
-            <div class="newsletter-subscribe__field">
-              <label for="emailInput" class="newsletter-subscribe__label">ENDEREÇO DE E-MAIL</label>
-              <input type="email" class="newsletter-subscribe__input" id="emailInput" placeholder="nome@exemplo.com" required>
-            </div>
-            <button type="submit" class="newsletter-subscribe__btn" id="subscribeBtn">
-              INSCREVER-SE NA LISTA DE TRANSMISSÃO <span>&rarr;</span>
-            </button>
-          </form>
-
-          <p class="newsletter-subscribe__disclaimer">Ao se inscrever, você concorda com nossa Política de Privacidade e Acesso Institucional.</p>
-        </div>
-      </div>
-    </section>
 
   </main>
 
@@ -181,7 +198,7 @@
             class="logo-imagem logo-imagem--rodape" />
         </a>
         <p class="rodape-descricao">
-          A Associação de Conselheiros do Brasil (ACB) é uma entidade dedicada ao fortalecimento da governança corporativa no país.
+          Transformando a governança em crescimento, confiança e futuro para as empresas brasileiras desde 2022.
         </p>
         <div class="rodape-redes-sociais">
           <a href="#" class="rede-social-link" aria-label="Compartilhar">
@@ -258,22 +275,6 @@
     </div>
 
   </footer>
-
-  <!-- ===== TOAST DE NOTIFICAÇÃO ===== -->
-  <div class="toast" id="toast" role="alert" aria-live="assertive" aria-hidden="true">
-    <i class="toast-icone fa-solid fa-circle-check"></i>
-    <span class="toast-mensagem"></span>
-  </div>
-
-  <!-- VLibras -->
-  <div vw class="enabled">
-    <div vw-access-button class="active"></div>
-    <div vw-plugin-wrapper>
-      <div class="vw-plugin-top-wrapper"></div>
-    </div>
-  </div>
-
-  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 
   <script src="../JS/global.js"></script>
   <script src="../JS/newsletter.js" defer></script>
