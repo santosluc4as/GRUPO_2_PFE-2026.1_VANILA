@@ -99,11 +99,11 @@ const founders = [
   { nome: "GILBERTO BUENO", img: "../images/conselheiros/gilberto-bueno.png" },
   { nome: "HENRIQUE BRAVO", img: "../images/conselheiros/henrique-bravo.png" },
   { nome: "ÍTALO MARTINS", img: "../images/conselheiros/italo-martins.png" },
-  { nome: "MANOEL CARBAUBA", img: "../images/conselheiros/manoel-carnauba.png" },
+  { nome: "MANOEL CARBAÚBA", img: "../images/conselheiros/manoel-carnauba.png" },
   { nome: "PAULO SARDINHA", img: "../images/conselheiros/paulo-sardinha.png" },
   { nome: "RICARDO PEIXOTO", img: "../images/conselheiros/ricardo-gentil.png" },
   { nome: "ROQUE MARTINS", img: "../images/conselheiros/roque-martins.png" },
-  { nome: "SÉRGIO ARAÚJO", img: "../images/conselheiros/sergio-araujo.png" },
+  { nome: "SÉRGIO ARAUJO", img: "../images/conselheiros/sergio-araujo.png" },
   { nome: "TELMO BAULER", img: "../images/conselheiros/telmo-bauler.png" }
 ];
 
