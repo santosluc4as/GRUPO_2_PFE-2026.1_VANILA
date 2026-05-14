@@ -1,13 +1,14 @@
 /* =========================================================
    CONTATO.CSS
-   Versão desktop-first mais rígida, focada em fidelidade
-   visual com a referência.
+   Versão desktop-first
    Usa os tokens definidos em global.css
 ========================================================= */
 
 /* =========================
    ACESSIBILIDADE
 ========================= */
+
+/* Link de Salto: Fica escondido fora da tela e só aparece ao receber foco */
 .skip-link {
   position: absolute;
   top: -48px;
@@ -23,18 +24,7 @@
   top: 10px;
 }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  white-space: nowrap;
-  clip-path: inset(50%);
-}
-
+/* Destaque visual de foco para navegação via teclado */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -50,12 +40,6 @@ textarea:focus-visible {
 .hero-contato__box,
 .contato-conteudo__container,
 .apoio-imediato__container,
-.rodape-contato__container,
-.rodape-contato__base {
-  width: min(100% - 32px, 1120px);
-  margin-left: auto;
-  margin-right: auto;
-}
 
 /* =========================
    HERO
@@ -63,7 +47,7 @@ textarea:focus-visible {
 .hero-contato {
   padding: 0 0 18px;
 }
-
+/* Caixa principal do hero: define o bloco branco central com sombra */
 .hero-contato__box {
   position: relative;
   min-height: 248px;
@@ -73,7 +57,7 @@ textarea:focus-visible {
   border-bottom: 2px solid rgba(26, 40, 86, 0.06);
   margin-top: 6%;
 }
-
+/* Faixa amarela decorativa posicionada no canto esquerdo.*/
 .hero-contato_decoracao_amarela {
   position:absolute;
   top: 0;
@@ -83,18 +67,16 @@ textarea:focus-visible {
   background: var(--cor-dourado-hover);
   z-index: 0;
 }
-
+/* Camada branca sobre a decoração para criar o recorte curvo do layout */
 .hero-contato__decoracao_base{
 position: absolute;
-  min-height: 248px;
   background: var(--cor-branco);
   width: 100%;
   height: 100%;
   border-top-left-radius:250px;
-  z-index: 1;
 }
 
-
+/* Container interno do conteúdo textual do hero. Controla recuo e área útil do texto */
 .hero-contato__container {
   position: relative;
   z-index: 1;
@@ -102,6 +84,7 @@ position: absolute;
   margin-left: 40px;
 }
 
+/* Texto institucional pequeno acima do título principal */
 .hero-contato__kicker {
   margin: 0 0 10px;
   color: var(--cor-dourado);
@@ -110,6 +93,7 @@ position: absolute;
   letter-spacing: 0.11em;
 }
 
+/* Título principal da página. */
 .hero-contato__titulo {
   margin: 0 0 14px;
   font-family: var(--fonte-titulo);
@@ -118,6 +102,7 @@ position: absolute;
   color: var(--cor-azul-escuro);
 }
 
+/* Texto de apoio abaixo do título */
 .hero-contato__descricao {
   max-width: 610px;
   margin: 0;
@@ -128,14 +113,19 @@ position: absolute;
 
 /* =========================
    SEÇÃO PRINCIPAL
+    Organiza o conteúdo em duas colunas:
+   informações à esquerda e formulário à direita.
 ========================= */
+
+/* Espaçamento externo da seção principal */
 .contato-conteudo {
   padding: 6px 0 34px;
 }
 
+/* Grid principal do conteúdo: */
 .contato-conteudo__container {
   display: grid;
-  grid-template-columns: 420px 1fr;
+  grid-template-columns: 420px 1fr;   /* primeira coluna fixa para infos, segunda flexível para formulário */
   gap: 58px;
   align-items: start;
 }
@@ -143,18 +133,23 @@ position: absolute;
 /* =========================
    INFO ESQUERDA
 ========================= */
+
+/* Coluna informativa da esquerda. Empilha os blocos com espaçamento vertical consistente */
 .contato-conteudo__info {
   display: flex;
   flex-direction: column;
   gap: 22px;
+  margin-left:25px;
 }
 
+/* Cada bloco individual de informação (como endereço ou canais diretos) */
 .info-contato {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
+/* Título h2 de cada bloco informativo. Usa caixa alta e cor de destaque para criar rótulos visuais */
 .info-contato__titulo {
   margin: 0;
   color: var(--cor-dourado);
@@ -163,6 +158,7 @@ position: absolute;
   letter-spacing: 0.08em;
 }
 
+/* Texto base dos blocos de informação */
 .info-contato__texto {
   font-style: normal;
   color: var(--cor-cinza-texto);
@@ -170,24 +166,23 @@ position: absolute;
   line-height: 1.6;
 }
 
-/* Ajuste de alinhamento do Endereço */
+/* Ajuste de alinhamento do bloco Address */
  address.info-contato__texto{
   display:flex;
 }
 
-.info-contato__texto p {
-  margin: 0 0 4px;
-}
-
+/* Links internos do bloco de informações, como telefone e e-mail */
 .info-contato__texto a {
   color: var(--cor-cinza-texto);
   transition: color var(--transicao-rapida);
 }
 
+/* Efeito visual ao passar o mouse nos links */
 .info-contato__texto a:hover {
   color: var(--cor-dourado);
 }
 
+/* Ícone associado às informações. */
 .info-contato__icone {
   display: inline-block;
   width: 16px;
@@ -198,6 +193,8 @@ position: absolute;
 /* =========================
    MAPA
 ========================= */
+
+/* Área principal do mapa: define tamanho, recorte arredondado e fundo base */
 .mapa-contato {
   position: relative;
   width: 100%;
@@ -210,6 +207,7 @@ position: absolute;
     linear-gradient(115deg, #a2a2a2 0%, #818181 44%, #707070 72%, #666 100%);
 }
 
+/* Camada adicional do mapa: adiciona as linhas do mapa */
 .mapa-contato::before {
   content: "";
   position: absolute;
@@ -220,6 +218,7 @@ position: absolute;
   opacity: 0.85;
 }
 
+/* Card central sobreposto ao mapa. Destaca o botão para abrir a localização */
 .mapa-contato__janela {
   position: absolute;
   top: 50%;
@@ -234,6 +233,7 @@ position: absolute;
   z-index: 1;
 }
 
+/* Texto curto do card do mapa */
 .mapa-contato__frase {
   margin: 0 0 10px;
   font-family: var(--fonte-titulo);
@@ -242,6 +242,7 @@ position: absolute;
   color: var(--cor-azul-medio);
 }
 
+/* Botão de ação para abrir o endereço no Google Maps */
 .mapa-contato__botao {
   display: inline-block;
   background: var(--cor-azul-escuro);
@@ -253,6 +254,7 @@ position: absolute;
   transition: background var(--transicao-media);
 }
 
+/* Estado hover do botão do mapa */
 .mapa-contato__botao:hover {
   text-decoration: none;
   background: var(--cor-dourado);
@@ -261,6 +263,8 @@ position: absolute;
 /* =========================
    FORMULÁRIO
 ========================= */
+
+/* Caixa principal do formulário */
 .formulario-contato-box {
   position: relative;
   background: var(--cor-branco);
@@ -269,6 +273,7 @@ position: absolute;
   box-shadow: var(--sombra-sm);
 }
 
+/* Barra lateral decorativa do formulário. */
 .formulario-contato-box::before {
   content: "";
   position: absolute;
@@ -277,18 +282,21 @@ position: absolute;
   background: var(--cor-dourado-hover);
 }
 
+/* Estrutura vertical interna do formulário */
 .formulario-contato {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
+/* Bloco individual de cada campo: label + input/select/textarea + mensagem de erro */
 .formulario-contato__campo {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
+/* Rótulos dos campos */
 .formulario-contato__campo label {
   color: var(--cor-cinza-texto);
   font-size: var(--texto-xs);
@@ -296,6 +304,7 @@ position: absolute;
   letter-spacing: 0.12em;
 }
 
+/* Campos de entrada */
 .formulario-contato__campo input,
 .formulario-contato__campo select,
 .formulario-contato__campo textarea {
@@ -310,6 +319,7 @@ position: absolute;
   transition: border-color var(--transicao-media);
 }
 
+/* Estado de foco dos campos */
 .formulario-contato__campo input:focus,
 .formulario-contato__campo select:focus,
 .formulario-contato__campo textarea:focus {
@@ -317,22 +327,26 @@ position: absolute;
   outline: none;
 }
 
+/* Select */
 .formulario-contato__campo select {
   appearance: auto;
   cursor: pointer;
 }
 
+/* Área de texto: possui altura mínima e permite redimensionamento vertical */
 .formulario-contato__campo textarea {
   min-height: 84px;
   resize: vertical;
 }
 
+/* Placeholders dos campos */
 .formulario-contato__campo input::placeholder,
 .formulario-contato__campo textarea::placeholder {
   color: var(--cor-cinza-texto);
   opacity: 0.6;
 }
 
+/* Botão principal de envio do formulário */
 .formulario-contato__enviar {
   margin-top: 2px;
   border: none;
@@ -353,12 +367,15 @@ position: absolute;
               box-shadow var(--transicao-media);
 }
 
+
+/* Efeito visual ao passar o mouse no botão */
 .formulario-contato__enviar:hover {
   background: var(--cor-dourado);
   transform: translateY(-2px);
   box-shadow: var(--sombra-md);
 }
 
+/* Texto legal abaixo do botão de envio */
 .formulario-contato__texto-legal {
   margin: 0;
   color: var(--cor-cinza-texto);
@@ -368,12 +385,14 @@ position: absolute;
   opacity: 0.7;
 }
 
+/* Mensagem de erro por campo, preenchida dinamicamente pelo JavaScript */
 .mensagem-erro {
   min-height: 1em;
   color: var(--cor-erro);
   font-size: var(--texto-xs);
 }
 
+/* Mensagem de sucesso do formulário, também preenchida pelo JavaScript */
 .mensagem-sucesso {
   min-height: 1em;
   margin: 0;
@@ -386,16 +405,20 @@ position: absolute;
 /* =========================
    APOIO IMEDIATO
 ========================= */
+
+/* Faixa geral da seção */
 .apoio-imediato {
   background: var(--cor-cinza-claro);
   padding: 52px 0 58px;
 }
 
+/* Cabeçalho central da seção */
 .apoio-imediato__header {
   text-align: center;
   margin-bottom: 28px;
 }
 
+/* Título principal da seção */
 .apoio-imediato__titulo {
   margin: 0;
   font-family: var(--fonte-titulo);
@@ -404,6 +427,7 @@ position: absolute;
   line-height: 1.08;
 }
 
+/* Linha decorativa abaixo do título */
 .apoio-imediato__linha {
   display: block;
   width: 54px;
@@ -413,6 +437,7 @@ position: absolute;
   border-radius: var(--raio-full);
 }
 
+/* Grid dos cards de apoio. Organiza os três cards lado a lado no desktop */
 .apoio-imediato__cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -421,6 +446,7 @@ position: absolute;
   margin: 0 auto;
 }
 
+/* Card individual de apoio */
 .card-apoio {
   background: var(--cor-branco);
   min-height: 148px;
@@ -430,17 +456,20 @@ position: absolute;
   transition: transform var(--transicao-media), box-shadow var(--transicao-media);
 }
 
+/* Efeito de elevação ao passar o mouse */
 .card-apoio:hover {
   transform: translateY(-4px);
   box-shadow: var(--sombra-md);
 }
 
+/* Ícone do card */
 .card-apoio__icone {
   color: var(--cor-dourado);
   font-size: var(--texto-lg);
   margin-bottom: 10px;
 }
 
+/* Título do card */
 .card-apoio__titulo {
   margin: 0 0 8px;
   font-family: var(--fonte-titulo);
@@ -449,6 +478,7 @@ position: absolute;
   color: var(--cor-azul-escuro);
 }
 
+/* Texto descritivo do card */
 .card-apoio__texto {
   margin: 0 0 14px;
   color: var(--cor-cinza-texto);
@@ -456,6 +486,7 @@ position: absolute;
   line-height: 1.45;
 }
 
+/* Link/CTA do card */
 .card-apoio__link {
   color: var(--cor-azul-escuro);
   font-size: var(--texto-xs);
@@ -463,6 +494,7 @@ position: absolute;
   transition: color var(--transicao-rapida);
 }
 
+/* Efeito hover do link do card */
 .card-apoio__link:hover {
   color: var(--cor-dourado);
 }
@@ -470,64 +502,33 @@ position: absolute;
 /* =========================
    RESPONSIVIDADE
 ========================= */
-@media (max-width: 980px) {
+
+/* Desktop Médio */
+@media (max-width: 1024px) {
+
+  /* O grid principal passa de duas colunas para uma coluna */
   .contato-conteudo__container {
     grid-template-columns: 1fr;
     gap: 30px;
   }
-
+  /* Os cards de apoio deixam de ficar lado a lado e passam a ser empilhados */
   .apoio-imediato__cards {
     grid-template-columns: 1fr;
     max-width: 520px;
   }
-
-  .rodape-contato__container {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
-@media (max-width: 760px) {
-  .cabecalho-contato {
-    height: auto;
-    flex-direction: column;
-  }
+/* Mobile (Com valor adaptado de 600px para 614px para evitar quebra do título em 2 linhas entre 600px e 615px) */
+@media (max-width: 614px) {
 
-  .cabecalho-contato__logo-faixa {
-    width: 100%;
-    min-width: auto;
-  }
-
-  .cabecalho-contato__conteudo {
-    flex-direction: column;
-    gap: 14px;
-    padding: 14px 16px 16px;
-  }
-
-  .cabecalho-contato__menu {
-    gap: 18px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
+  /* Reduz o espaçamento interno do hero no mobile */
   .hero-contato__container {
     padding: 48px 24px 36px;
+    margin-top:40px;
   }
 
+  /* Reduz o título principal para caber melhor em telas pequenas */
   .hero-contato__titulo {
     font-size: 2.4rem;
-  }
-
-  .hero-contato__decoracao {
-    width: 180px;
-    height: 94px;
-  }
-
-  .rodape-contato__container {
-    grid-template-columns: 1fr;
-  }
-
-  .rodape-contato__base {
-    flex-direction: column;
-    align-items: flex-start;
   }
 }
