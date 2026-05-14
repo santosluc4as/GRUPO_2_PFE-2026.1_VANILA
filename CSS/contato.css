@@ -24,19 +24,6 @@
   top: 10px;
 }
 
-/* Classe utilitária para esconder visualmente um elemento sem removê-lo da árvore de acessibilidade */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  white-space: nowrap;
-  clip-path: inset(50%);
-}
-
 /* Destaque visual de foco para navegação via teclado */
 a:focus-visible,
 button:focus-visible,
