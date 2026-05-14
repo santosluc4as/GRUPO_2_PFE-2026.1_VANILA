@@ -3,18 +3,13 @@
    Usa os tokens definidos em global.css
    ========================================================================== */
 
-/* Tipografia Base para a Home */
-h1,
-h2,
-h3,
-h4 {
-    font-family: var(--fonte-titulo);
-    color: var(--cor-azul-escuro);
-    line-height: 1.1;
-    font-weight: 700;
+/* Tipografia Base para a Home - Especializações se necessário */
+h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    letter-spacing: -0.03em;
 }
 
-/* Placeholder Images Styling */
+/* Estilização de Imagens de Marcador (Placeholder) */
 .placeholder-img {
     background-color: var(--cor-cinza-medio);
     display: flex;
@@ -30,75 +25,27 @@ h4 {
 }
 
 /* ==========================================================================
-   Botões (Home)
+   Botões (Home) - Especializações se necessário
    ========================================================================== */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.85rem 2rem;
-    border-radius: var(--raio-sm);
-    font-weight: 600;
-    cursor: pointer;
-    transition: all var(--transicao-media);
-    border: none;
-    gap: 0.6rem;
-    font-size: 0.95rem;
-    font-family: var(--fonte-texto);
-    letter-spacing: 0.3px;
-}
-
-.btn-secondary {
-    background-color: var(--cor-azul-escuro);
-    color: var(--cor-branco);
-}
-
-.btn-secondary:hover {
-    background-color: var(--cor-azul-medio);
-    transform: translateY(-2px);
-    box-shadow: var(--sombra-md);
-}
-
-.btn-outline {
-    background-color: transparent;
-    color: var(--cor-azul-escuro);
-    border: 2px solid var(--cor-azul-escuro);
-}
-
-.btn-outline:hover {
-    background-color: var(--cor-azul-escuro);
-    color: var(--cor-branco);
-}
-
 .btn-yellow {
-    background-color: var(--cor-dourado);
-    color: var(--cor-azul-escuro);
+    /* Especialização para o botão grande da home */
     padding: 1rem 2.5rem;
     font-size: 1.1rem;
     border-radius: var(--raio-md);
     font-weight: 700;
 }
 
-.btn-yellow:hover {
-    background-color: var(--cor-dourado-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(200, 151, 42, 0.4);
-}
-
 /* ==========================================================================
-   Hero Section (Home)
+   Seção Destaque (Hero) - Home
    ========================================================================== */
 .hero-home {
     background-color: var(--cor-branco);
-    padding: 10rem 0 8rem;
+    padding: calc(var(--altura-navbar) + 6rem) 0 8rem;
     position: relative;
     overflow: hidden;
-    margin-top: var(--altura-navbar);
 }
 
 .hero-home .container {
-    max-width: 1280px;
-    margin: 0 auto;
     padding: 0 var(--espaco-lg);
 }
 
@@ -200,18 +147,6 @@ h4 {
     font-family: var(--fonte-titulo);
 }
 
-.hero-bg-yellow {
-    position: absolute;
-    top: -150px;
-    right: -150px;
-    width: 600px;
-    height: 600px;
-    background-color: rgba(200, 151, 42, 0.08);
-    border-radius: 50%;
-    z-index: 0;
-    pointer-events: none;
-}
-
 .hero-bg-map {
     position: absolute;
     top: 0;
@@ -236,8 +171,6 @@ h4 {
 }
 
 .indicators-section .container {
-    max-width: 1280px;
-    margin: 0 auto;
     padding: 0 var(--espaco-lg);
 }
 
@@ -332,20 +265,31 @@ h4 {
 }
 
 .articles-section .container {
-    max-width: 1280px;
-    margin: 0 auto;
     padding: 0 var(--espaco-lg);
 }
 
 .section-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: flex-start;
 }
 
 .section-header h2 {
     font-size: 2.2rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
+}
+
+.section-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.section-title-bar {
+    width: 120px;
+    height: 4px;
+    background: var(--cor-dourado);
+    border-radius: var(--raio-full);
 }
 
 .section-subtitle {
@@ -364,6 +308,7 @@ h4 {
     align-items: center;
     gap: 8px;
     transition: color var(--transicao-rapida);
+    margin-top: 0.5rem;
 }
 
 .view-all:hover {
@@ -372,7 +317,7 @@ h4 {
 
 .articles-grid {
     display: grid;
-    grid-template-columns: 1.4fr 0.6fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
 }
 
@@ -381,17 +326,22 @@ h4 {
     border-radius: var(--raio-lg);
     overflow: hidden;
     box-shadow: var(--sombra-sm);
+    border: 1px solid var(--cor-borda);
     transition: all var(--transicao-media);
+    display: flex;
+    flex-direction: column;
 }
 
 .article-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--sombra-lg);
+    border-color: var(--cor-dourado);
 }
 
 .article-image {
     display: block;
     width: 100%;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
 }
 
@@ -407,12 +357,11 @@ h4 {
     transform: scale(1.08);
 }
 
-.article-card.featured .article-image {
-    aspect-ratio: 16 / 10;
-}
-
 .article-content {
     padding: 2.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .category {
@@ -428,10 +377,6 @@ h4 {
     letter-spacing: 1px;
 }
 
-.featured .article-content h3 {
-    font-size: 2rem;
-    margin-bottom: 1.2rem;
-}
 
 .article-content h3 {
     color: var(--cor-azul-escuro);
@@ -444,92 +389,30 @@ h4 {
     margin-bottom: 1.2rem;
 }
 
-.article-card .date {
-    color: var(--cor-cinza-texto);
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-.article-card .author {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-top: 1rem;
-}
-
-.article-card .author-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    flex-shrink: 0;
-}
-
-.article-card .author span {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--cor-azul-escuro);
-}
-
-.articles-list {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.article-card.small {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    min-height: 160px;
-}
-
-.article-card.small .article-image {
-    width: 38%;
-    flex-shrink: 0;
-    align-self: stretch;
-}
-
-.article-card.small .article-image img {
-    height: 100%;
-}
-
-.article-card.small .article-content {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex: 1;
-    min-width: 0;
-}
-
-.article-card.small h3 {
-    font-size: 1.1rem;
-    line-height: 1.3;
-}
-
 /* ==========================================================================
    Seção de Eventos
    ========================================================================== */
+   
 .events-section {
     padding: 7rem 0;
     background-color: var(--cor-branco);
 }
 
 .events-section .container {
-    max-width: 1280px;
-    margin: 0 auto;
     padding: 0 var(--espaco-lg);
 }
 
 .events-section h2 {
     font-size: 2.2rem;
+    margin-bottom: 0;
+}
+
+.section-header--left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
     margin-bottom: 3.5rem;
-    text-align: center;
+    text-align: left;
 }
 
 .events-grid {
@@ -540,7 +423,7 @@ h4 {
 
 .event-card {
     background-color: var(--cor-branco);
-    border: 1px solid var(--cor-cinza-medio);
+    border: 1px solid var(--cor-borda);
     border-radius: var(--raio-lg);
     padding: 2.5rem;
     transition: all var(--transicao-media);
@@ -705,6 +588,7 @@ h4 {
 
     .articles-grid {
         grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     .hero-home {
@@ -719,15 +603,6 @@ h4 {
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
-    }
-
-    .article-card.small {
-        flex-direction: column;
-    }
-
-    .article-card.small .article-image {
-        width: 100%;
-        height: 200px;
     }
 
     .event-card {
