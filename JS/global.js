@@ -375,7 +375,27 @@ function inicializarVLibras() {
    INICIALIZAÇÃO GERAL — roda em todas as páginas
    ========================================================================== */
 
+function injetarComponentesGlobais() {
+  if (!document.getElementById('toast')) {
+    document.body.insertAdjacentHTML('beforeend', `
+      <div class="toast" id="toast" role="alert" aria-live="assertive" aria-hidden="true">
+        <i class="toast-icone fa-solid fa-circle-check"></i>
+        <span class="toast-mensagem"></span>
+      </div>
+    `);
+  }
+  if (!document.querySelector('[vw]')) {
+    document.body.insertAdjacentHTML('beforeend', `
+      <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>
+      </div>
+    `);
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  injetarComponentesGlobais();
   inicializarNavbar();
   inicializarBusca();
   inicializarAnimacoesEntrada();

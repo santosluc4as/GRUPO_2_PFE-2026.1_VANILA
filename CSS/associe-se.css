@@ -77,11 +77,8 @@
 
 /* Título hero */
 .hero-titulo {
-  font-family: var(--fonte-titulo);
   font-size: var(--texto-3xl);
-  font-weight: 700;
   line-height: 1.15;
-  color: var(--cor-azul-escuro);
   letter-spacing: -0.5px;
 }
 
@@ -126,10 +123,8 @@
 }
 
 .card-etica-titulo {
-  font-family: var(--fonte-titulo);
   font-size: var(--texto-lg);
   font-weight: 600;
-  color: var(--cor-azul-escuro);
   margin-bottom: var(--espaco-sm);
 }
 
@@ -180,10 +175,8 @@
 }
 
 .categorias-titulo {
-  font-family: var(--fonte-titulo);
   font-size: var(--texto-xl);
   font-weight: 600;
-  color: var(--cor-azul-escuro);
   font-style: italic;
 }
 
@@ -303,10 +296,7 @@
 }
 
 .formulario-titulo {
-  font-family: var(--fonte-titulo);
   font-size: var(--texto-2xl);
-  font-weight: 700;
-  color: var(--cor-azul-escuro);
   margin-bottom: var(--espaco-sm);
 }
 
@@ -524,54 +514,11 @@
    9. BOTÃO DE ENVIO
    -------------------------------------------------------------------------- */
 .btn-enviar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--espaco-sm);
+  /* Especialização se necessário, mas herda de .btn */
   width: 100%;
   padding: var(--espaco-md) var(--espaco-xl);
-  background: var(--cor-azul-escuro);
-  color: var(--cor-branco);
-  font-family: var(--fonte-texto);
-  font-size: var(--texto-sm);
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  border-radius: var(--raio-md);
-  border: 2px solid transparent;
-  transition: background var(--transicao-media),
-              transform var(--transicao-rapida),
-              box-shadow var(--transicao-media),
-              border-color var(--transicao-media);
   position: relative;
   overflow: hidden;
-}
-
-/* Efeito shimmer ao passar o mouse */
-.btn-enviar::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
-  transition: left 0.6s ease;
-}
-
-.btn-enviar:hover::before {
-  left: 100%;
-}
-
-.btn-enviar:hover {
-  background: var(--cor-dourado);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(200, 151, 42, 0.4);
-}
-
-.btn-enviar:active {
-  transform: translateY(0);
-  box-shadow: none;
 }
 
 .btn-enviar-icone {

@@ -189,63 +189,28 @@ function renderArticles(container, posts) {
     if (!container) return;
     container.innerHTML = '';
 
-    const featuredPost = posts[0];
-    const sidePosts = posts.slice(1);
+    posts.forEach(post => {
+        const card = document.createElement('article');
+        card.className = 'article-card';
+        
+        const imgUrl = getFeaturedImage(post, 'medium_large');
+        const category = getCategory(post);
+        const excerpt = stripHtml(post.excerpt.rendered).substring(0, 150) + '...';
+        const dateStr = formatDatePtBR(post.date);
 
-    // --- Artigo Destaque ---
-    const featuredCard = document.createElement('article');
-    featuredCard.className = 'article-card featured';
-    
-    const featuredImgUrl = getFeaturedImage(featuredPost, 'large');
-    const featuredCategory = getCategory(featuredPost);
-    const featuredExcerpt = stripHtml(featuredPost.excerpt.rendered).substring(0, 200) + '...';
-    const featuredAuthor = getAuthorName(featuredPost);
-    const featuredAvatar = getAuthorAvatar(featuredPost);
-
-    featuredCard.innerHTML = `
-        <a href="${featuredPost.link}" target="_blank" class="article-image">
-            <img src="${featuredImgUrl}" alt="${decodeHtml(featuredPost.title.rendered)}" loading="lazy">
-        </a>
-        <div class="article-content">
-            <span class="category">${featuredCategory}</span>
-            <a href="${featuredPost.link}" target="_blank"><h3>${decodeHtml(featuredPost.title.rendered)}</h3></a>
-            <p>${featuredExcerpt}</p>
-            <div class="author">
-                <img src="${featuredAvatar}" alt="${featuredAuthor}" class="author-avatar">
-                <span>${featuredAuthor}</span>
+        card.innerHTML = `
+            <a href="${post.link}" target="_blank" class="article-image">
+                <img src="${imgUrl}" alt="${decodeHtml(post.title.rendered)}" loading="lazy">
+            </a>
+            <div class="article-content">
+                <span class="category">${category}</span>
+                <a href="${post.link}" target="_blank"><h3>${decodeHtml(post.title.rendered)}</h3></a>
+                <p>${excerpt}</p>
+                <span class="date">${dateStr}</span>
             </div>
-        </div>
-    `;
-    container.appendChild(featuredCard);
-
-    // --- Artigos Laterais ---
-    if (sidePosts.length > 0) {
-        const listDiv = document.createElement('div');
-        listDiv.className = 'articles-list';
-
-        sidePosts.forEach(post => {
-            const card = document.createElement('article');
-            card.className = 'article-card small';
-
-            const imgUrl = getFeaturedImage(post, 'medium');
-            const dateStr = formatDatePtBR(post.date);
-            const excerpt = stripHtml(post.excerpt.rendered).substring(0, 120) + '...';
-
-            card.innerHTML = `
-                <a href="${post.link}" target="_blank" class="article-image">
-                    <img src="${imgUrl}" alt="${decodeHtml(post.title.rendered)}" loading="lazy">
-                </a>
-                <div class="article-content">
-                    <span class="date">${dateStr}</span>
-                    <a href="${post.link}" target="_blank"><h3>${decodeHtml(post.title.rendered)}</h3></a>
-                    <p>${excerpt}</p>
-                </div>
-            `;
-            listDiv.appendChild(card);
-        });
-
-        container.appendChild(listDiv);
-    }
+        `;
+        container.appendChild(card);
+    });
 }
 
 /**
@@ -274,29 +239,6 @@ function getCategory(post) {
         }
     } catch (e) { }
     return 'Artigo';
-}
-
-function getAuthorName(post) {
-    try {
-        if (post.uagb_author_info?.display_name) {
-            return post.uagb_author_info.display_name;
-        }
-        const author = post._embedded?.author;
-        if (author && author[0]) {
-            return author[0].name;
-        }
-    } catch (e) { }
-    return 'ACBrasil';
-}
-
-function getAuthorAvatar(post) {
-    try {
-        const author = post._embedded?.author;
-        if (author && author[0]?.avatar_urls) {
-            return author[0].avatar_urls['96'] || author[0].avatar_urls['48'];
-        }
-    } catch (e) { }
-    return 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22%3E%3Ccircle cx=%2220%22 cy=%2220%22 r=%2220%22 fill=%22%23e2e8f0%22/%3E%3C/svg%3E';
 }
 
 // Remove tags HTML de strings (ex: excerpts)
