@@ -392,6 +392,39 @@ function injetarComponentesGlobais() {
       </div>
     `);
   }
+  if (!document.querySelector('.back-to-top')) {
+    document.body.insertAdjacentHTML('beforeend', `
+      <button class="back-to-top" aria-label="Voltar ao topo">
+        <i class="fa-solid fa-arrow-up"></i>
+      </button>
+    `);
+  }
+}
+
+/* ==========================================================================
+   MÓDULO: BOTÃO VOLTAR AO TOPO
+   ========================================================================== */
+
+/**
+ * Controla a visibilidade do botão "voltar ao topo" e o scroll suave
+ */
+function inicializarBotaoTopo() {
+  const backToTopBtn = document.querySelector('.back-to-top');
+  if (!backToTopBtn) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      backToTopBtn.style.opacity = '1';
+      backToTopBtn.style.visibility = 'visible';
+    } else {
+      backToTopBtn.style.opacity = '0';
+      backToTopBtn.style.visibility = 'hidden';
+    }
+  }, { passive: true });
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -401,5 +434,6 @@ document.addEventListener('DOMContentLoaded', () => {
   inicializarAnimacoesEntrada();
   inicializarLinkAtivo();
   inicializarBarraProgresso();
+  inicializarBotaoTopo();
   inicializarVLibras();
 });

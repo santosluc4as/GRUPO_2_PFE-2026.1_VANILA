@@ -82,25 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
     quoteCard.addEventListener('mouseleave', startAutoPlay);
     quoteCard.style.transition = 'opacity 0.3s ease';
   }
-
-  // Botão Voltar ao Topo
-  const backToTopBtn = document.querySelector('.back-to-top');
-
-  if (backToTopBtn) {
-    // Estado inicial
-    backToTopBtn.style.opacity = '0';
-    backToTopBtn.style.visibility = 'hidden';
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 400) {
-        backToTopBtn.style.opacity = '1';
-        backToTopBtn.style.visibility = 'visible';
-      } else {
-        backToTopBtn.style.opacity = '0';
-        backToTopBtn.style.visibility = 'hidden';
-      }
-    }, { passive: true });
-  }
 });
 
 const founders = [

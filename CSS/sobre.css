@@ -485,28 +485,4 @@
 .dot.active {
   background-color: var(--cor-dourado);
   transform: scale(1.2);
-}
-
-/* Botão voltar ao topo lateral */
-.back-to-top {
-  position: fixed;
-  right: 0;
-  bottom: 150px;
-  background-color: var(--cor-dourado);
-  color: var(--cor-branco);
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--raio-sm) 0 0 var(--raio-sm);
-  box-shadow: var(--sombra-md);
-  z-index: 500;
-  cursor: pointer;
-  transition: all var(--transicao-media);
-}
-
-.back-to-top:hover {
-  background-color: #a67c22;
-  padding-right: 10px;
-}
+}
