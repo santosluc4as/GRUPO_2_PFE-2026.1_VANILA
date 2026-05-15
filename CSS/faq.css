@@ -34,26 +34,6 @@ main {
     border-bottom: 2px solid rgba(26, 40, 86, 0.06);
 }
 
-.hero_decoracao_amarela {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 220px;
-    height: 100%;
-    background: var(--cor-dourado);
-    z-index: 0;
-}
-
-.hero_decoracao_base {
-    position: absolute;
-    min-height: 248px;
-    background: var(--cor-branco);
-    width: 100%;
-    height: 100%;
-    border-top-left-radius: 250px;
-    z-index: 1;
-}
-
 
 .hero_container {
     display: flex;
