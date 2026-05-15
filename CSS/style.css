@@ -294,6 +294,7 @@ h1 {
 
 .section-subtitle {
     color: var(--cor-cinza-texto);
+    margin-top: 0.8rem;
     margin-bottom: 3.5rem;
     font-size: var(--texto-base);
 }
