@@ -60,25 +60,6 @@ textarea:focus-visible {
   margin-top: 6%;
 }
 
-.hero-contato_decoracao_amarela {
-  position:absolute;
-  top: 0;
-  left: 0;
-  width: 220px;
-  height: 100%;
-  background: var(--cor-dourado-hover);
-  z-index: 0;
-}
-
-.hero-contato__decoracao_base{
-position: absolute;
-  background: var(--cor-branco);
-  width: 100%;
-  height: 100%;
-  border-top-left-radius:250px;
-}
-
-
 .hero-contato__container {
   position: relative;
   z-index: 1;
