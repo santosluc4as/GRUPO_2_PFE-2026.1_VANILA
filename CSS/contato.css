@@ -37,14 +37,18 @@ textarea:focus-visible {
 ========================= */
 .hero-contato__box,
 .contato-conteudo__container,
-.apoio-imediato__container,
+.apoio-imediato__container {
+
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
 
 /* =========================
    HERO
 ========================= */
-.hero-contato {
-  padding: 0 0 18px;
-}
 
 .hero-contato__box {
   position: relative;
@@ -78,8 +82,7 @@ position: absolute;
 .hero-contato__container {
   position: relative;
   z-index: 1;
-  padding: 56px 48px 42px 62px;
-  margin-left: 40px;
+  padding: 56px 32px 42px;
 }
 
 .hero-contato__kicker {
