@@ -83,12 +83,25 @@ document.addEventListener('DOMContentLoaded', () => {
     quoteCard.style.transition = 'opacity 0.3s ease';
   }
 
+  // Botão Voltar ao Topo
+  const backToTopBtn = document.querySelector('.back-to-top');
+
+  if (backToTopBtn) {
     // Estado inicial
     backToTopBtn.style.opacity = '0';
     backToTopBtn.style.visibility = 'hidden';
-    backToTopBtn.style.transition = 'opacity 0.3s ease, visibility 0.3s ease';
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTopBtn.style.opacity = '1';
+        backToTopBtn.style.visibility = 'visible';
+      } else {
+        backToTopBtn.style.opacity = '0';
+        backToTopBtn.style.visibility = 'hidden';
+      }
+    }, { passive: true });
   }
-);
+});
 
 const founders = [
   { nome: "ALEXANDRE REIS", img: "../images/conselheiros/alexandre-reis.jpg" },
