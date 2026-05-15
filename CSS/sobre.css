@@ -507,6 +507,6 @@
 }
 
 .back-to-top:hover {
-  background-color: var(--cor-azul-escuro);
+  background-color: #a67c22;
   padding-right: 10px;
 }
