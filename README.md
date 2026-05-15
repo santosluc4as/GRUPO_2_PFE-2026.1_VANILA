@@ -66,6 +66,6 @@ Edite ou adicione o arquivo `.html` da página desejada dentro da pasta `HTML/`.
 - Adicione ou substitua imagens na pasta `images/`.
 - Fotos de conselheiros devem ser salvas em `images/conselheiros/`.
 
-## Licenca
+## Licença
 
 Propriedade intelectual da Associação de Conselheiros do Brasil (ACBrasil). Todos os direitos reservados.

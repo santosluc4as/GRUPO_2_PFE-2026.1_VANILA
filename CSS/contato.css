@@ -277,9 +277,7 @@ position: absolute;
   letter-spacing: 0.12em;
 }
 
-.formulario-contato__campo input,
-.formulario-contato__campo select,
-.formulario-contato__campo textarea {
+.formulario-contato__campo input, .formulario-contato__campo select, .formulario-contato__campo textarea {
   width: 100%;
   border: none;
   border-bottom: 1px solid var(--cor-borda);
@@ -291,9 +289,7 @@ position: absolute;
   transition: border-color var(--transicao-media);
 }
 
-.formulario-contato__campo input:focus,
-.formulario-contato__campo select:focus,
-.formulario-contato__campo textarea:focus {
+.formulario-contato__campo input:focus, .formulario-contato__campo select:focus, .formulario-contato__campo textarea:focus {
   border-color: var(--cor-azul-medio);
   outline: none;
 }
@@ -308,8 +304,7 @@ position: absolute;
   resize: vertical;
 }
 
-.formulario-contato__campo input::placeholder,
-.formulario-contato__campo textarea::placeholder {
+.formulario-contato__campo input::placeholder, .formulario-contato__campo textarea::placeholder {
   color: var(--cor-cinza-texto);
   opacity: 0.6;
 }
