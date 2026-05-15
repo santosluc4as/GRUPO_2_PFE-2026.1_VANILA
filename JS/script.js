@@ -166,7 +166,7 @@ async function fetchArticles() {
     if (!container) return; // Proteção: evita erro se o elemento não existir na página
     
     try {
-        const response = await fetch(`${WP_API_BASE}/posts?per_page=3&_embed`);
+        const response = await fetch(`${WP_API_BASE}/posts?_embed&per_page=10&categories=20`);
         const posts = await response.json();
 
         if (!posts || posts.length === 0) {

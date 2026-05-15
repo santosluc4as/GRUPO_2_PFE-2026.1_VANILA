@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   async function buscarPosts() {
     try {
-      const response = await fetch(`${API_BASE}/posts?_embed&per_page=10`);
+      const response = await fetch(`${API_BASE}/posts?_embed&per_page=10&categories=20`);
       if (!response.ok) throw new Error('Falha ao buscar posts');
       
       const posts = await response.json();
