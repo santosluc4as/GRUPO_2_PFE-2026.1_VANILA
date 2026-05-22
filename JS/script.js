@@ -22,6 +22,13 @@ document.addEventListener('DOMContentLoaded', () => {
 async function fetchEconomicIndicators() {
     const container = document.getElementById('indicators-container');
     if (!container) return; // Sai silenciosamente se o container não estiver na página
+
+    container.innerHTML = `
+        <div class="indicators-loading" role="status" aria-live="polite" aria-label="Carregando indicadores econômicos">
+            <div class="indicators-loading__spinner"></div>
+            <p>Carregando indicadores econômicos...</p>
+        </div>
+    `;
     
     try {
         // 1. Busca dados da HG Brasil (Ibovespa, Dólar, Euro)
